@@ -13,11 +13,14 @@
     max-height: 90vh;
     max-width: 90vw;
     /* border-style:; */
-    border-bottom: 1px solid hsla(0, 0%, 100%, 0.082);
-    border-right: 1px solid hsla(0, 0%, 100%, 0.082);
-    border-left: 1px solid hsla(0, 0%, 100%, 0.082);
-
+    
     /* border-bottom: 0px; */
+
+  }
+  .terminal-border{
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.082);
+  border-right: 1px solid hsla(0, 0%, 100%, 0.082);
+  border-left: 1px solid hsla(0, 0%, 100%, 0.082);
 
   }
   

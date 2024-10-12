@@ -1,12 +1,19 @@
 .Projects {
     width: 100vw;
     height: 100vh; /* Full viewport height */
+    /*background-color: #00000013;*/
     display: flex;
+    gap:20px;
     justify-content: center;
     align-items: center;
     position: relative; /* For stacking */
     overflow: hidden; /* Hide overflow to maintain layout */
     /* background: url('your-background-image.jpg') no-repeat center center fixed; Optional: background image */
+}
+ .section-heading{
+    color:#fc7307 !important;
+    text-decoration: underline;
+    font-family: "Nova Mono",monospace;
 }
 
 .mySwiper {
@@ -15,28 +22,60 @@
     overflow: visible; /* Allow overflow to show rounded corners */
 }
 
-.project-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for glass effect */
+.project-card-old{
+    /*background: rgba(29, 29, 29, 0.986); /* Semi-transparent background for glass effect */
     border-radius: 15px; /* Round corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    background-color: #030303;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.418); /* Shadow for depth */
     padding: 20px;
+    /* filter: blur(10px); */
+    border: 1px solid rgba(32, 32, 32, 0.384);
     backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    
     z-index: 1; /* Base z-index for all cards */
     transition: transform 0.3s ease, opacity 0.3s ease;
     position: relative; /* Allow stacking */
     margin: 10px; /* Add margin to ensure spacing between cards */
 }
+.project-card-border{
+    border-radius: 20px;
+    border: 1px solid rgba(88, 88, 88, 0);
+    background-color: hsla(0, 0%, 100%, 0.030);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.418); /* Shadow for depth */
+    
+}
 
 /* Additional styles remain the same... */
+.tags{
+    display: flex;
+    gap:10px
+}
+.tag{
+    color: #fc7307;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
+
+    border-radius: 10px;
+    background-color: #ffffff0a;
+}
 .title{
     font-family: monospace;
     color: #fc7307;
+    
+    /* backdrop-filter: blur(25px); */
 }
 .card-content {
-    text-align: center;
+    /* text-align: center; */
     color: #ffffff; /* Text color for better contrast */
+}
+.swiper-pagination-bullet{
+    background-color: #fc7307;
+    /* pointer-events: none; */
+    /* z-index: -1; */
 }
 
 /* Style for the Swiper slide */
@@ -44,8 +83,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+.swiper-slide.swiper-slide-active.terminal.project-card-border {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition */
 }
 
+.swiper-slide.swiper-slide-active.terminal.project-card-border:hover{
+    background-color: #030303d5;
+    transform: scale(1.05);
+}
 /* All cards */
 .project-card {
     opacity: 0.8; /* Make all cards slightly transparent */
@@ -62,7 +109,31 @@
 .swiper-slide {
     margin: 0 10px; /* Add margin for spacing */
 }
+.github-link {
+    display: flex;
+    align-items: center;
+    background-color: #27272757;
+    color: rgba(0, 255, 255, 0.849);
+    /* color: #fc7307; */
 
+    border: 1px solid rgba(0, 255, 255, 0.158);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow:4px 4px 20px rgba(0, 0, 0, 0.541);
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Add transition */
+  }
+  
+  
+  
+  .github-link:hover {
+    background-color: hsla(0, 0%, 0%, 0.342);
+    border: 1px solid rgba(252, 113, 7, 0.199);
+    /* color:#994200; */
+    
+  }
+  
 /* Responsive Styles */
 @media (min-width: 600px) {
     .mySwiper {
@@ -87,13 +158,27 @@
     .swiper-button-prev {
       display: none; /* Hide navigation buttons */
     }
-  }
+}
   
-  /* Optionally, you can customize their appearance on larger screens */
+/* Optionally, you can customize their appearance on larger screens */
   @media (min-width: 769px) {
+.project-card-border{
+    /* max-width: 50%; */
+}
     .swiper-button-next,
     .swiper-button-prev {
       display: block; /* Show navigation buttons */
+      color: orange;
+      opacity: 25%;
+      transition: opacity 0.3s; /* Smooth transition */
+    }
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        opacity: 0.85; /* Change opacity on hover */
+    }
+    .project-card-border{
+    padding: 100px;
+
     }
   }
   

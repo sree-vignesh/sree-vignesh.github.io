@@ -128,7 +128,7 @@ const Terminal = () => {
         <div className="app-bar-button maximize"></div>
         <div className="app-bar-button close"></div>
       </div>
-      <div className="terminal">
+      <div className="terminal terminal-border">
         <div className="terminal-output">
           {output.map((line, index) => (
             <p
