@@ -25,7 +25,7 @@ const Terminal = () => {
 
   const welcomeMessage = [
     "Welcome to the terminal!<br/> Type 'help' for a list of commands.<br/>",
-    "List of commands: help, about, secret, projects, email, clear, history",
+    "List of commands: help, about, projects, email, clear, history",
   ];
   // Example theme state
   const [theme, setTheme] = useState("light");

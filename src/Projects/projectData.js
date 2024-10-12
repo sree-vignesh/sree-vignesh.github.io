@@ -36,7 +36,7 @@ const projectData = [
     id: 5,
     title: "Virtual Mock Interview",
     description:
-      "Developed a VR application during the IEEE Metaverse conference at IIIT Bangalore, utilizing Unity and Blender. Explore my portfolio on GitHub, and if you enjoy it, please give it a star!",
+      "Developed a VR application during the IEEE Metaverse conference at IIIT Bangalore, utilizing Unity and Blender. ",
     tags: ["Unity", "Blender"],
     link: "https://github.com/sree-vignesh/vr-interview-windows",
   },
