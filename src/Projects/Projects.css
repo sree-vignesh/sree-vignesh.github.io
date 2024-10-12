@@ -91,7 +91,7 @@
 
 .swiper-slide.swiper-slide-active.terminal.project-card-border:hover{
     background-color: #030303d5;
-    transform: scale(1.05);
+    transform: scale(1.025);
 }
 /* All cards */
 .project-card {
