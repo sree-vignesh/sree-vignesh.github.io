@@ -13,6 +13,12 @@
     max-height: 90vh;
     max-width: 90vw;
     /* border-style:; */
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.082);
+    border-right: 1px solid hsla(0, 0%, 100%, 0.082);
+    border-left: 1px solid hsla(0, 0%, 100%, 0.082);
+
+    /* border-bottom: 0px; */
+
   }
   
   .terminal-output {
@@ -43,6 +49,11 @@
   }
   /* src/Terminal.css */
 .app-bar { 
+  border: 1px solid hsla(0, 0%, 100%, 0.082);
+  /* border-top: rgb(0, 255, 157); */
+  /* border-top: 1px solid hsla(0, 0%, 100%, 0.082);
+    border-right: 1px solid hsla(0, 0%, 100%, 0.082);
+    border-left: 1px solid hsla(0, 0%, 100%, 0.082); */
   height: 20px;
   display: flex;
   justify-content:end;

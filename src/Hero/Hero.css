@@ -12,7 +12,16 @@
 
 p {
   color: aqua;
+  /* color: rgba(255,172,28,1); */
   font-family: monospace;
+}
+.arrow{
+  z-index: 7;
+  color: orange;
+  font-family: monospace;
+  opacity: 50%;
+  /* margin-top: auto; */
+  
 }
 .name{
     /* text-shadow: 0 0 20px #00ffff00, 0 0 25px #00ffff; */

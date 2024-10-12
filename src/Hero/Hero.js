@@ -29,12 +29,15 @@ function Hero() {
   return (
     <section
       ref={heroRef}
-      className="hero d-flex justify-content-center align-items-center"
+      className="hero d-flex justify-content-center align-items-center flex-column"
     >
+      {/* <div className="navibar">helo</div> */}
       <StarAnimation />
       <div className="glass p-4 d-flex flex-row align-items-center">
         <div className="greetings d-flex flex-column align-items-center ">
-          <p className="fs-5 nova-mono-regular">Greetings,</p>
+          <p className="fs-5 nova-mono-regular" style={{ opacity: 0.7 }}>
+            Greetings,
+          </p>
 
           <h1 className=" fs-1 fw-bold name nova-mono-regular">
             I'm Sree Vignesh!
@@ -42,10 +45,13 @@ function Hero() {
           <br />
           <br />
 
-          <p className="zeyada-regular fs-2">(un)professional dev.</p>
+          <p className="zeyada-regular fs-2 " style={{ opacity: 0.9 }}>
+            (un)professional dev.
+          </p>
         </div>
         {/* <div className="three-scene">{ <ThreeScene /> }</div> */}
       </div>
+      <div className="arrow">↓</div>
     </section>
   );
 }
