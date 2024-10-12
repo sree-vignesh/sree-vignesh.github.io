@@ -1,0 +1,99 @@
+.Projects {
+    width: 100vw;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For stacking */
+    overflow: hidden; /* Hide overflow to maintain layout */
+    /* background: url('your-background-image.jpg') no-repeat center center fixed; Optional: background image */
+}
+
+.mySwiper {
+    width: 90%; /* Adjust width for mobile */
+    height: 80%; /* Adjust height for mobile */
+    overflow: visible; /* Allow overflow to show rounded corners */
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background for glass effect */
+    border-radius: 15px; /* Round corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    padding: 20px;
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    z-index: 1; /* Base z-index for all cards */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative; /* Allow stacking */
+    margin: 10px; /* Add margin to ensure spacing between cards */
+}
+
+/* Additional styles remain the same... */
+
+.title{
+    font-family: monospace;
+    color: #fc7307;
+}
+.card-content {
+    text-align: center;
+    color: #ffffff; /* Text color for better contrast */
+}
+
+/* Style for the Swiper slide */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* All cards */
+.project-card {
+    opacity: 0.8; /* Make all cards slightly transparent */
+}
+
+/* Active card */
+.swiper-slide-active .project-card {
+    opacity: 1; /* Fully opaque for active slide */
+    transform: scale(1.05); /* Slightly enlarge the active card */
+    z-index: 2; /* Bring the active card to the front */
+}
+
+/* Add space between cards */
+.swiper-slide {
+    margin: 0 10px; /* Add margin for spacing */
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+    .mySwiper {
+        width: 80%; /* Wider for larger screens */
+        height: 70%; /* Adjust height for larger screens */
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Show 3 cards on larger screens */
+    .mySwiper {
+        slidesPerView: 3;
+    }
+}
+/* Hide navigation buttons on mobile */
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none; /* Hide navigation buttons */
+    }
+  }
+  
+  /* Optionally, you can customize their appearance on larger screens */
+  @media (min-width: 769px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: block; /* Show navigation buttons */
+    }
+  }
+  

@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+import "./App.css";
+import Hero from "./Hero/Hero";
+import Terminal from "./Terminal/Terminal";
+import Projects from "./Projects/Projects";
+import Contact from "./Contact/Contact";
+import BackgroundGradient from "./BackgroundGradient/BackgroundGradient";
+// import { Navbar, Nav } from "react-bootstrap";
+// import NavigationBar from "./Navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      {/* <NavigationBar /> */}
+      <div className="background">
+        <BackgroundGradient />
+        <Hero />
+        <Terminal />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 }

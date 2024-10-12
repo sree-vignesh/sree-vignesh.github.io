@@ -1,0 +1,132 @@
+import React, { useState, useEffect } from "react";
+import "./Terminal.css";
+import { whois, social, projects, help, email } from "./terminalData";
+
+const ASCII_WELCOME = [
+  `
+    Welcome to my terminal!
+    Use "help" command.`,
+];
+
+function Terminal() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState([]);
+  const [isWelcomePrinted, setIsWelcomePrinted] = useState(false);
+  const [typing, setTyping] = useState(false);
+  const [history, setHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+
+  useEffect(() => {
+    printWelcomeMessage();
+  }, []);
+
+  const printWelcomeMessage = () => {
+    let index = 0;
+
+    const interval = setInterval(() => {
+      if (index < ASCII_WELCOME.length) {
+        typeOut(ASCII_WELCOME[index] + "<br/>");
+        index++;
+      } else {
+        clearInterval(interval);
+        setIsWelcomePrinted(true);
+      }
+    }, 200); // Adjust speed of printing (200ms)
+  };
+
+  const typeOut = (text) => {
+    setTyping(true);
+    let index = 0;
+    const newOutput = [...output];
+
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        newOutput.push(text[index]);
+        setOutput([...newOutput]);
+        index++;
+      } else {
+        clearInterval(interval);
+        setTyping(false);
+      }
+    }, 50); // Speed of typing (50ms)
+  };
+
+  const handleInput = (e) => {
+    if (e.key === "Enter" && isWelcomePrinted) {
+      const commandOutput = ` > ${input}<br/>`;
+      typeOut(commandOutput);
+
+      // Add command to history
+      setHistory([...history, input]);
+      setHistoryIndex(history.length);
+
+      let response;
+
+      switch (input.trim().toLowerCase()) {
+        case "whois":
+          response = whois.join("<br/>") + "<br/>";
+          break;
+        case "social":
+          response = social.join("<br/>") + "<br/>";
+          break;
+        case "projects":
+          response = projects.join("<br/>") + "<br/>";
+          break;
+        case "help":
+          response = help.join("<br/>") + "<br/>";
+          break;
+        case "email":
+          response = `Email me at: <a href="mailto:${email}">${email}</a><br/>`;
+          break;
+        case "clear":
+          setOutput([]); // Clear the terminal output
+          setInput(""); // Reset input field
+          return; // Exit the function early
+        default:
+          response = `Command not recognized: ${input}<br/>`;
+      }
+
+      if (response) {
+        typeOut(response);
+      }
+
+      setInput(""); // Reset input after processing
+    } else if (e.key === "ArrowUp") {
+      if (historyIndex > 0) {
+        setHistoryIndex(historyIndex - 1);
+        setInput(history[historyIndex - 1]);
+      }
+    } else if (e.key === "ArrowDown") {
+      if (historyIndex < history.length - 1) {
+        setHistoryIndex(historyIndex + 1);
+        setInput(history[historyIndex + 1] || "");
+      }
+    }
+  };
+
+  return (
+    <section className="Terminal">
+      <div className="terminal">
+        <div className="terminal-output">
+          <pre
+            className="terminal-line"
+            dangerouslySetInnerHTML={{ __html: output.join("") }}
+          />
+        </div>
+        <div className="terminal-input">
+          <span>&gt;</span>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleInput}
+            autoFocus
+            disabled={typing} // Disable input while typing animation is running
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Terminal;

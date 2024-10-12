@@ -1,0 +1,95 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* position:fixed; */
+}
+
+p {
+  color: aqua;
+  font-family: monospace;
+}
+.name{
+    /* text-shadow: 0 0 20px #00ffff00, 0 0 25px #00ffff; */
+    /* background: rgb(0,255,255); */
+    background: linear-gradient(58deg, rgba(0,255,255,1) 0%, rgba(255,172,28,1) 61%, rgba(0,255,255,1) 100%); 
+    /* background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(120,79,0,1) 31%, rgba(255,172,28,1) 61%, rgba(0,255,255,1) 100%); */
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  font-size: 64px;
+  /* font-weight: bold; */
+  color: #000000 !important;
+  margin-bottom: 40px;
+  mix-blend-mode: overlay;
+  /* animation: glow 2s ease-in-out infinite alternate; */
+  animation: shine 2.5s linear infinite;
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+.qwitcher-grypen-regular {
+  font-family: "Qwitcher Grypen", cursive ;
+  font-weight: 400;
+  font-style: normal;
+}
+.text-bg{
+  text-align: center;
+  
+  background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+  background-size: 200% auto;
+  
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: shine 1s linear infinite;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    
+    /* text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff; */
+  }
+  to {
+    text-shadow: 0 0 0px #000000, 0 0 0px #000000;
+
+    /* text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff, 0 0 80px #00ffff; */
+  }
+}
+.glass {
+  /* background: rgba(92, 92, 92, 0.2); */
+  border-radius: 15px;
+  /* backdrop-filter: blur(10px); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
+  min-width: 50%;
+  min-height: 50%;
+  z-index: 7;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  /* position: relative; */
+}
+
+.three-scene {
+  z-index: 1; /* Place it below the glass div */
+}

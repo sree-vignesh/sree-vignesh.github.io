@@ -1,0 +1,105 @@
+.terminal {
+    background-color: #240b0b2c;  /* Dark background for terminal */
+    backdrop-filter:blur(25px);
+    color:  #FC7307;  /* Green text color */
+    border-radius:0px 0px 5px 5px;  /* Slight rounding for aesthetics */
+    padding: 20px;  /* Padding inside terminal */
+    font-family: "Courier New", Courier, monospace;  /* Monospace font */
+    /*height: 300px;  /* Fixed height */
+    overflow-y: auto;  /* Scroll if content exceeds height */
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  /* Shadow effect */
+    min-width: 70%;
+    min-height: 60%;
+    max-height: 90vh;
+    max-width: 90vw;
+    /* border-style:; */
+  }
+  
+  .terminal-output {
+    margin-bottom: 10px;  /* Space between output and input */
+  }
+  
+  .terminal-input {
+    display: flex;  /* Flexbox for input and prompt */
+  }
+  .command{
+    color: #FC7307;
+    display: inline;
+  }
+  .terminal-input input {
+    border: none;  /* No border for input */
+    background: transparent;  /* Transparent background */
+    /* color:  rgb(175, 13, 175);;  Green text */
+    color: #FC7307;
+    outline: none;  /* No outline */
+    flex: 1;  /* Take up remaining space */
+  }
+  
+  .terminal-line {
+    opacity: 0;
+    /* color: #FC7307; */
+
+    animation: fadeIn 0.5s forwards; /* Animation for fading in */
+  }
+  /* src/Terminal.css */
+.app-bar { 
+  height: 20px;
+  display: flex;
+  justify-content:end;
+  gap: 15px;
+  align-items: center;
+  background-color: #33333373; /* Dark background for the app bar */
+  backdrop-filter: blur(25px);
+  color: white; /* Text color */
+  padding: 10px;
+  border-radius: 5px 5px 0 0; /* Rounded corners at the top */
+  margin-bottom: 0px; /* Space between app bar and terminal */
+  /* min-width: 70vw;
+  max-width: 90%; */
+}
+@media (min-width: 768px) {
+  .app-bar {
+    min-width: 70vw;
+    max-width: 90%;
+  }
+}
+
+/* Styles for mobile */
+@media (max-width: 767px) {
+  .app-bar {
+    min-width: 90vw; /* Full width for mobile */
+  }
+}
+.app-bar-button {
+  /* background-color: rgb(250, 0, 0); */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px ;
+  margin-top:30px;
+  margin-bottom: 30px;
+  transition: background 0.3s;
+  border-radius: 100px;
+  opacity: 50%;
+}
+.close{
+  background-color: #f96256;
+}
+.maximize{
+  background-color: #33c948;
+}
+.minimize{
+  background-color: #fdbc3d;
+}
+
+.app-bar-button:hover {
+  /* background: rgba(255, 255, 255, 0.1); Light hover effect */
+
+  opacity: 80%;
+}
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
