@@ -46,7 +46,7 @@ const projectData = [
     title: "This Site !",
     description:
       "This is currently my portfolio. Feel free to explore on GitHub and, if you like it, please give it a star!",
-    tags: ["ReactJS", "Bootstrap", "SASS"],
+    tags: ["ReactJS", "Bootstrap", "SCSS"],
     link: "https://github.com/sree-vignesh/sree-vignesh.github.io",
   },
 ];
