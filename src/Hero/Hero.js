@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Hero.css"; // Your styles for the hero section
-import "./Star.css"; // Your styles for the stars
+import "./Stars.css"; // Your styles for the stars
 import ThreeScene from "./Three"; // Assuming this is where your rotating cube component is
 
 function Hero() {
@@ -51,7 +51,7 @@ function Hero() {
         </div>
         {/* <div className="three-scene">{ <ThreeScene /> }</div> */}
       </div>
-      <div className="arrow">↓</div>
+      <div className="arrow fs-5">↓</div>
     </section>
   );
 }
@@ -61,6 +61,9 @@ const StarAnimation = () => {
     <div className="stars">
       {[...Array(50)].map((_, index) => (
         <div key={index} className="star"></div>
+      ))}
+      {[...Array(10)].map((_, index) => (
+        <div key={index} className="star orange"></div>
       ))}
     </div>
   );
