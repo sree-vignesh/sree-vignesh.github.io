@@ -6,8 +6,7 @@ export const github = "https://github.com/sree-vignesh/";
 export const email = "mailto:reach.sreevignesh@gmail.com";
 
 export const whois = [
-  "<br>",
-  "Greetings, <b>I'm Sree Vignesh!<b>",
+  'Greetings, <b style="color: #fc7307;">I\'m Sree Vignesh!<b>',
   "A web wizard with a fervent fascination for the realms of networking and operating systems.",
   "I approach tech challenges like a daring adventurer exploring uncharted territories, ",
   "crafting innovative solutions that transform the mundane into the extraordinary.",
@@ -16,6 +15,7 @@ export const whois = [
   "If you seek a collaborator who merges technical prowess with a visionary spirit, ",
   "let’s forge a connection and conjure up some extraordinary creations!",
   "<br>",
+  'List of commands: <b style="color: #fc7307;">help, about, projects, email, clear, history<b>',
 ];
 
 export const social = [

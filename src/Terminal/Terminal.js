@@ -31,8 +31,8 @@ const Terminal = () => {
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     // Print whois information on load
-    loopLines(whois, 80);
-    loopLines(welcomeMessage, 80);
+    loopLines(whois, 160);
+    // loopLines(welcomeMessage, 80);
   }, []); // Empty dependency array to run on mount
   const loopLines = (lines, time) => {
     lines.forEach((line, index) => {

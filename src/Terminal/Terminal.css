@@ -47,6 +47,7 @@
   .terminal-line {
     opacity: 0;
     /* color: #FC7307; */
+    margin-bottom: 0;
 
     animation: fadeIn 0.5s forwards; /* Animation for fading in */
   }
