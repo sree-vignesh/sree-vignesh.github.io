@@ -17,6 +17,14 @@ const projectData = [
     link: "https://github.com/sree-vignesh/image-to-ascii-js",
   },
   {
+    id: 2,
+    title: "PrintEase",
+    description:
+      "Allows students to upload documents, choose print options, and track job status, reducing wait times and improving efficiency",
+    tags: ["NodeJS", "Flutter"],
+    link: "https://github.com/sree-vignesh/printease_server",
+  },
+  {
     id: 3,
     title: "Department Symposium Webpage",
     description:
