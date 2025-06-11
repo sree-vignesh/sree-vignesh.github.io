@@ -86,12 +86,18 @@
     overflow: hidden;
 }
 .swiper-slide.swiper-slide-active.terminal.project-card-border {
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition */
+    transition: background-color 8s ease, transform 0.3s ease, border 0.5s ease; /* Add transition */
 }
 
 .swiper-slide.swiper-slide-active.terminal.project-card-border:hover{
-    background-color: #030303d5;
+    /* background-color: #030303d5; */
     transform: scale(1.025);
+    backdrop-filter: blur(25px) brightness(0.1);
+        /* Blur effect for glassmorphism */
+    border: #c7570263 1px solid;
+    /* transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; */
+        /* Add transition */
+    
 }
 /* All cards */
 .project-card {
