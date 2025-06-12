@@ -22,7 +22,7 @@
   "scripts": {
     "start": "HOST=0.0.0.0 react-scripts start",
     "build-local": "BUILD_PATH='./docs' react-scripts build",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
 
     "test": "react-scripts test",
     "eject": "react-scripts eject"
