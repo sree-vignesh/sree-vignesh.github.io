@@ -6,12 +6,12 @@ import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
 import BackgroundGradient from "./BackgroundGradient/BackgroundGradient";
 // import { Navbar, Nav } from "react-bootstrap";
-// import NavigationBar from "./Navbar/Navbar";
+import NavigationBar from "./Navbar/Navbar";
 
 function App() {
   return (
     <div className="app-container">
-      {/* <NavigationBar /> */}
+      <NavigationBar />
       <div className="background">
         <BackgroundGradient />
         <Hero />

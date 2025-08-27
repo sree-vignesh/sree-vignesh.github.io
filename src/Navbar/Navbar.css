@@ -1,27 +1,53 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #0077ee00;
-}
+/* Make navbar fixed, clean, and minimal */
+.custom-navbar {
+    background: #ffffff00;
+    /* slight transparency */
+    border-radius: 40px;
+    border: 1px solid aqua;
+    backdrop-filter: blur(8px);
+    /* glassy effect */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    padding: 0.6rem 1.5rem;
+    margin:35px;
 
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+    transition: background 0.3s ease-in-out;
 }
-
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+#Container{
+    max-width: 10vw;
 }
-
-.navbar-links li a {
+/* Brand styles */
+.brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0077ee !important;
     text-decoration: none;
-    color: #333;
 }
 
-.navbar-links li a:hover {
-    color: #007bff;
+/* Navbar links */
+.navbar-nav .nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    color: white !important;
+    background-color: #0077ee;
+}
+
+
+
+/* Mobile-friendly tweaks */
+@media (max-width: 768px) {
+    .custom-navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.6rem 1rem;
+        text-align: center;
+    }
 }
