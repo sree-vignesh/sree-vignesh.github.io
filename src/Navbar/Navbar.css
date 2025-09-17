@@ -1,53 +1,66 @@
-/* Make navbar fixed, clean, and minimal */
-.custom-navbar {
-    background: #ffffff00;
-    /* slight transparency */
-    border-radius: 40px;
-    border: 1px solid aqua;
-    backdrop-filter: blur(8px);
-    /* glassy effect */
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-    padding: 0.6rem 1.5rem;
-    margin:35px;
+/* Sidebar container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    /* Full height */
+    width: 80px;
+    /* Slim vertical navbar */
+    background: rgba(190, 160, 160, 0);
+    backdrop-filter: blur(12px);
+    /* Glass effect */
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    /* Brand on top, links in middle */
+    align-items: center;
+    padding: 20px 0;
+    /* box-shadow: 3px 0 15px rgba(0, 0, 0, 0.4); */
+    z-index: 1000;
+}
 
-    transition: background 0.3s ease-in-out;
-}
-#Container{
-    max-width: 10vw;
-}
-/* Brand styles */
+/* Brand name */
 .brand {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #0077ee !important;
-    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    writing-mode: vertical-rl;
+    /* Vertical text */
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    /* So brand reads bottom-to-top */
+    margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
-/* Navbar links */
-.navbar-nav .nav-link {
-    color: #333 !important;
-    font-weight: 500;
-    padding: 0.5rem 0.8rem;
-    border-radius: 6px;
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centers links vertically */
+    align-items: center;
+    flex-grow: 1;
+    gap: 40px;
+    /* Adds spacing between links */
+}
+
+/* Vertical link text */
+.vertical-text {
+    writing-mode: vertical-rl;
+    /* Vertical stacking */
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    /* Makes text readable bottom-to-top */
+    color: #000000 !important;
+    font-size: 1rem;
     transition: all 0.3s ease;
+    padding: 6px;
+    cursor: pointer;
 }
 
-/* Hover effect */
-.navbar-nav .nav-link:hover {
-    color: white !important;
-    background-color: #0077ee;
-}
-
-
-
-/* Mobile-friendly tweaks */
-@media (max-width: 768px) {
-    .custom-navbar {
-        padding: 0.8rem 1rem;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 0.6rem 1rem;
-        text-align: center;
-    }
+.vertical-text:hover {
+    color: #fff;
+    transform: rotate(180deg) scale(1.1);
 }
