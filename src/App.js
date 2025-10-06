@@ -15,9 +15,19 @@ function App() {
       <div className="background">
         <BackgroundGradient />
         <Hero />
-        <Terminal />
-        <Projects />
-        <Contact />
+        <section id="about">
+          <Terminal />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+        {/* 
+        <Terminal id="about" />
+        <Projects id="projects" />
+        <Contact id="contact" /> */}
       </div>
     </div>
   );

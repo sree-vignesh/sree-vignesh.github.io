@@ -88,8 +88,8 @@ p {
   border-radius: 15px;
   /* backdrop-filter: blur(10px); */
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
-  min-width: 50%;
-  min-height: 50%;
+  min-width: 100%;
+  min-height: 100%;
   z-index: 7;
   position: relative;
   display: flex;

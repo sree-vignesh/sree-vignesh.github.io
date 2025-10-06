@@ -1,66 +1,68 @@
-/* Sidebar container */
+/* Floating Glass Navbar */
 .sidebar {
+    font-family: monospace;
+    /* font-size: 500px; */
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    /* Full height */
-    width: 80px;
-    /* Slim vertical navbar */
-    background: rgba(190, 160, 160, 0);
-    backdrop-filter: blur(12px);
-    /* Glass effect */
+    top: 20px;
+    /* From top */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    width: auto;
+    /* Fit content */
+    min-width: 300px;
+    /* Give it some width */
+    background: rgba(255, 255, 255, 0);
+    /* Transparent glass */
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border-radius: 40px;
+    /* Pill shape */
     display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    /* Brand on top, links in middle */
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 20px 0;
-    /* box-shadow: 3px 0 15px rgba(0, 0, 0, 0.4); */
+    gap: 40px;
+    /* Space between items */
+    padding: 12px 30px;
+    box-shadow:
+        /* inset 2px 2px 6px rgba(255, 255, 255, 0.15), */
+        /* inset -2px -2px 6px rgba(0, 0, 0, 0.25); */
+        0 8px 50px rgba(0, 0, 0, 0.35);
+    /* Floating effect */
     z-index: 1000;
 }
 
-/* Brand name */
+/* Brand (optional left side) */
 .brand {
     color: #fff;
     font-size: 1rem;
-    text-align: center;
-    writing-mode: vertical-rl;
-    /* Vertical text */
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    /* So brand reads bottom-to-top */
-    margin-bottom: 40px;
-    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0.9;
 }
 
-/* Navigation links container */
+/* Navigation links */
 .nav-links {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Centers links vertically */
     align-items: center;
-    flex-grow: 1;
-    gap: 40px;
-    /* Adds spacing between links */
+    gap: 30px;
 }
 
-/* Vertical link text */
-.vertical-text {
-    writing-mode: vertical-rl;
-    /* Vertical stacking */
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    /* Makes text readable bottom-to-top */
-    color: #000000 !important;
+/* Normal text links */
+.nav-links a {
+    /* color: rgba(255, 255, 255, 0.85); */
+    color:rgba(0, 255, 255, 0.747);
     font-size: 1rem;
+    text-decoration: none;
     transition: all 0.3s ease;
-    padding: 6px;
     cursor: pointer;
 }
+.nav-links a:active{
+    color:red;
+}
 
-.vertical-text:hover {
-    color: #fff;
-    transform: rotate(180deg) scale(1.1);
+.nav-links a:hover {
+    /* color: aqua; */
+    color: orange;
+    /* transform: scale(1.1); */
 }
