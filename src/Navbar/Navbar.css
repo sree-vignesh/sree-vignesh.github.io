@@ -1,27 +1,69 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #0077ee00;
+/* Floating Glass Navbar */
+.sidebar {
+  font-family: monospace;
+  /* font-size: 500px; */
+  position: fixed;
+  top: 20px;
+  /* From top */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  width: auto;
+  /* Fit content */
+  min-width: 300px;
+  /* Give it some width */
+  background: rgba(255, 255, 255, 0);
+  /* Transparent glass */
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border-radius: 40px;
+  /* Pill shape */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  /* Space between items */
+  padding: 12px 30px;
+  box-shadow:
+        /* inset 2px 2px 6px rgba(255, 255, 255, 0.15), */
+        /* inset -2px -2px 6px rgba(0, 0, 0, 0.25); */ 0
+    8px 50px rgba(0, 0, 0, 0.35);
+  /* Floating effect */
+  z-index: 1000;
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* Brand (optional left side) */
+.brand {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
 }
 
-.navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-.navbar-links li a {
-    text-decoration: none;
-    color: #333;
+/* Normal text links */
+.nav-links a {
+  /* color: rgba(255, 255, 255, 0.85); */
+  color: rgba(0, 255, 255, 0.747);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.nav-links a:active {
+  color: red;
 }
 
-.navbar-links li a:hover {
-    color: #007bff;
+.nav-links a:hover {
+  /* color: aqua; */
+  color: orange;
+  /* transform: scale(1.1); */
+  transform: scaleX(1.1);
 }

@@ -38,6 +38,7 @@
   /* font-family: monospace; */
 }
 .background {
+  scroll-behavior: smooth;
  /* position: fixed; /* Fix the background */
   top: 0;
   left: 0;
@@ -79,6 +80,7 @@ section {
   scroll-snap-type: y mandatory; /* Enable snap points */
   background-color: #282c34;
   overscroll-behavior: contain; /* Prevent elastic scroll effect */
+  scroll-behavior:smooth;
 }
 
 .App-logo {

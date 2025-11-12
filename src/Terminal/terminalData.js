@@ -15,7 +15,7 @@ export const whois = [
   "If you seek a collaborator who merges technical prowess with a visionary spirit, ",
   "let’s forge a connection and conjure up some extraordinary creations!",
   "<br>",
-  'List of commands: <b style="color: #fc7307;">help, about, projects, email, clear, history<b>',
+  'List of commands: <b style="color: #fc7307;">help, about, email, clear, history<b>',
 ];
 
 export const social = [
@@ -33,7 +33,7 @@ export const projects = [
 export const help = [
   '<div class="command">about</div>           About myself',
   '<div class="command">social</div>          Display social networks',
-  '<div class="command">projects</div>        View my projects',
+  // '<div class="command">projects</div>        View my projects',
   '<div class="command">help</div>            You obviously already know what this does',
   '<div class="command">email</div>           Do not email me',
   '<div class="command">clear</div>           Clear terminal',

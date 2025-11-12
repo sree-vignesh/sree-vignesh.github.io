@@ -1,21 +1,18 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import "./Navbar.css";
 
 function NavigationBar() {
   return (
-    <Navbar bg="light" expand="lg">
-      {/* <Navbar.Brand href="#home">BrandName</Navbar.Brand> */}
-      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Link href="#projects">Projects</Nav.Link>
-          {/* <Nav.Link href="#about">About</Nav.Link> */}
-          {/* <Nav.Link href="#services">Services</Nav.Link> */}
-          <Nav.Link href="#contact">Contact</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <div className="sidebar">
+      <Nav className="flex-row nav-links">
+      {/* <Nav.Link href="#hero" className="vertical-text">           </Nav.Link> */}
+        <Nav.Link href="#about" className="vertical-text">About Me</Nav.Link>
+        <Nav.Link href="#projects" className="vertical-text">Projects</Nav.Link>
+        <Nav.Link href="#contact" className="vertical-text">Contact</Nav.Link>
+
+      </Nav>
+    </div>
   );
 }
 
