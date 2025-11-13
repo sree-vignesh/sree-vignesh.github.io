@@ -1,59 +1,61 @@
 .Contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    /* background: linear-gradient(to right, #1e1e1e, #333); Background gradient */
-  }
-  .socials{
-    /* margin:30px; */
-  }
-  .content {
-    gap:10%;
-    background: rgba(255, 255, 255, 0.041); /* Glassmorphism effect */
-    backdrop-filter: blur(10px); /* Glass effect */
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid black;
-    max-width: 90vw;
-    overflow: hidden;
-    /*margin-right: 20px; /* Space between content and SVG */
-    /* margin:20px; */
-  }
-  
-  .social-links {
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    gap: 10px; /* Space between links */
-  }
-  
-  .social-link {
-    border: 1px solid rgba(255, 174, 0, 0.075);
-    border-radius: 10px;
-    background-color: rgb(2, 2, 2);
-    color: aqua; /* Link color */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    font-family: 'Courier New', Courier, monospace;
-    /* max-width: fit-content; */
-    width: 100%;
-    padding: 10px;
-    
-  }
-  
-  .social-link:hover {
-    color: #FC7307; /* Hover color */
-  }
-  
-  .svg-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .cool-svg {
-    width: 200px; /* Adjust size as needed */
-    height: auto;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  /* background: linear-gradient(to right, #1e1e1e, #333); Background gradient */
+}
+.socials {
+  /* margin:30px; */
+}
+.content {
+  gap: 10%;
+  background: rgba(255, 255, 255, 0.041); /* Glassmorphism effect */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid black;
+  max-width: 90vw;
+  overflow: hidden;
+  /*margin-right: 20px; /* Space between content and SVG */
+  /* margin:20px; */
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  gap: 10px; /* Space between links */
+}
+
+.social-link {
+  border: 1px solid rgba(255, 174, 0, 0.075);
+  border-radius: 10px;
+  background-color: rgb(2, 2, 2);
+  color: aqua; /* Link color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.5s;
+  /* transition: background-color 0.3s; */
+
+  font-family: "Courier New", Courier, monospace;
+  /* max-width: fit-content; */
+  width: 100%;
+  padding: 10px;
+}
+
+.social-link:hover {
+  background-color: #bb5303;
+
+  color: rgb(2, 2, 2);
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cool-svg {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+}
