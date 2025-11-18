@@ -1,119 +1,108 @@
-/* --- Section Container --- */
+/* ---------- Section ---------- */
 .Projects {
   width: 100%;
-  padding: 40px 20px;
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  overflow: visible;
-  /* Prevent scrollbars or overflow cutting */
 }
 
-/* --- Swiper container --- */
-.mySwiper {
-  width: 100%;
-  max-width: 85vw;
-  height: auto;
-  /* overflow: visible; */
-}
-
-/* --- Section heading --- */
 .section-heading {
-  color: #fc7307 !important;
-  text-decoration: underline;
-  font-family: "Nova Mono", monospace;
-  margin-bottom: 20px;
+  color: #ff8a2b;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(255, 138, 43, 0.4);
 }
 
-/* --- Individual Slide Layout --- */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+/* ---------- Grid Layout ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 35px;
+  width: 100%;
+  max-width: 1300px;
   padding: 10px;
 }
 
-/* --- Card --- */
-.project-card-border {
+/* ---------- Glass Card ---------- */
+.glass-card {
+  backdrop-filter: blur(18px) saturate(180%);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
-  border: 1px solid rgba(88, 88, 88, 0);
-  background-color: hsla(0, 0%, 100%, 0.03);
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.418);
-  padding: 20px;
-  transition: transform 0.3s ease, border 0.3s ease, opacity 0.3s ease;
-  width: 100%;
-  height: 100%;
+  padding: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55),
+    inset 0 0 25px rgba(255, 255, 255, 0.05);
+
+  transition: 0.4s ease;
+  cursor: pointer;
 }
 
-.project-card-border:hover {
-  /* transform: translateY(-5px) scale(1.02); */
-  border-color: #c7570263;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(15px) brightness(0.2);
+/* Hover – premium lift effect */
+.glass-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: rgba(255, 136, 0, 0.3);
+  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.65),
+    inset 0 0 35px rgba(255, 255, 255, 0.07), 0 0 25px rgba(255, 136, 0, 0.4);
 }
 
-/* --- Card Content --- */
-.card-content {
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.title {
-  font-family: monospace;
-  color: #fc7307;
+/* ---------- Typography ---------- */
+.project-title {
+  color: #ff8a2b;
+  font-size: 1.4rem;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
 }
 
+.project-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  font-family: "Inter", sans-serif;
+}
+
+/* ---------- Tags ---------- */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .tag {
-  color: #fc7307;
-  border: 1px solid rgba(255, 255, 255, 0.075);
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: #ffffff0a;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  border-radius: 8px;
+  color: #ff8a2b;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(10px);
 }
 
-/* --- GitHub Button --- */
-.github-link {
-  display: inline-block;
-  background-color: #27272757;
-  color: rgba(0, 255, 255, 0.849);
-  border: 1px solid rgba(0, 255, 255, 0.158);
+/* ---------- Button ---------- */
+.btn {
   padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
-  align-self: flex-start;
+  border-radius: 10px;
+  border: 1px solid #ff8a2b;
+  color: #ff8a2b;
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  transition: 0.3s ease;
 }
 
-.github-link:hover {
-  background-color: #c75702;
+.btn:hover {
+  background: #ff8a2b;
   color: black;
-  border: 1px solid rgba(252, 113, 7, 0.199);
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-  .Projects {
-    padding: 20px 10px;
-  }
-
-  .mySwiper {
-    height: auto;
-  }
-
-  .title {
-    font-size: 1rem;
-  }
+  box-shadow: 0 0 15px rgba(255, 138, 43, 0.6);
 }

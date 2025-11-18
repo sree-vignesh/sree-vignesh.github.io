@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap");
 .zeyada-regular {
   font-family: "Zeyada", cursive;
   font-weight: 400;
@@ -33,13 +32,13 @@
   position: relative;
   /* background-color: #000000; */
 }
-.name{
+.name {
   /* font-family: 'Roboto', sans-serif; */
   /* font-family: monospace; */
 }
 .background {
   scroll-behavior: smooth;
- /* position: fixed; /* Fix the background */
+  /* position: fixed; /* Fix the background */
   top: 0;
   left: 0;
   width: 100%;
@@ -49,13 +48,12 @@
   background-size: cover; /* Cover the entire viewport */
   /* z-index: -1; Place behind all sections */
 }
-html, body {
+html,
+body {
   margin: 0; /* Remove default margin */
   height: 100%; /* Ensure body takes full height */
   background-color: black;
   /* background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); */
-
-  
 }
 html {
   scroll-behavior: smooth; /* Smooth scrolling */
@@ -64,30 +62,30 @@ html {
 body {
   margin: 0; /* Remove default body margin */
   overflow: hidden;
-    /* overscroll-behavior: contain; Prevent elastic scroll effect */
+  /* overscroll-behavior: contain; Prevent elastic scroll effect */
 }
 
 section {
-  scroll-snap-align: start; /* Snap to the start of each section */
-  height: 100vh; /* Ensure each section takes full viewport height */
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  scroll-snap-align: start;
+  min-height: 100vh;
+  height: auto;
 }
 
 .app-container {
   scroll-snap-type: y mandatory; /* Enable snap points in the y direction */
-   height: 100vh; /* Container takes full viewport height */
+  height: 100vh; /* Container takes full viewport height */
   overflow-y: auto; /* Enable vertical scrolling */
   scroll-snap-type: y mandatory; /* Enable snap points */
   background-color: #282c34;
   overscroll-behavior: contain; /* Prevent elastic scroll effect */
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-.about .project{
+.about .project {
   z-index: 4;
 }
 section {
@@ -96,10 +94,9 @@ section {
   display: flex; /* Optional: use flexbox for centering content */
   justify-content: center; /* Optional: center content horizontally */
   align-items: center; /* Optional: center content vertically */
- /* background-color: #282c34; /*Example background color
+  /* background-color: #282c34; /*Example background color
   /* backdrop-filter: blur(1px); */
   /* background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); */
-
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
