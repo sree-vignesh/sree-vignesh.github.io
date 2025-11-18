@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, Grid } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/grid";
 
 import "./Projects.css";
 
@@ -32,7 +33,7 @@ function Projects() {
 
   if (loading) {
     return (
-      <section className="Projects d-flex justify-content-center align-items-center flex-column">
+      <section className="Projects">
         <h1 className="section-heading">Projects</h1>
         <p className="loading">Loading projects...</p>
       </section>
@@ -41,7 +42,7 @@ function Projects() {
 
   if (error) {
     return (
-      <section className="Projects d-flex justify-content-center align-items-center flex-column">
+      <section className="Projects">
         <h1 className="section-heading">Projects</h1>
         <p className="error">{error}</p>
       </section>
@@ -49,25 +50,24 @@ function Projects() {
   }
 
   return (
-    <section className="Projects d-flex justify-content-center align-items-center flex-column">
+    <section className="Projects">
       <h1 className="section-heading">Projects</h1>
       <Swiper
-        className="mySwiper"
+        modules={[Navigation, Pagination, Autoplay, Grid]}
         spaceBetween={20}
-        slidesPerView={1}
-        centeredSlides={true}
-        rewind={true}
+        slidesPerView={2}
+        grid={{ rows: 2, fill: "row" }}
         navigation={true}
-        pagination={true}
-        modules={[Navigation, Pagination]}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        loop={true}
+        className="mySwiper"
       >
         {projectData.map((project, index) => (
-          <SwiperSlide key={index} className="terminal project-card-border">
+          <SwiperSlide key={index} className="project-card-border">
             <div className="card-content">
               <h2 className="title">{project.title}</h2>
-              <br />
               <p>{project.description}</p>
-              <br />
               <div className="tags">
                 {project.tags.map((tag, i) => (
                   <span key={i} className="tag">
@@ -75,7 +75,6 @@ function Projects() {
                   </span>
                 ))}
               </div>
-              <br />
               <button
                 className="github-link"
                 onClick={() => window.open(project.link, "_blank")}

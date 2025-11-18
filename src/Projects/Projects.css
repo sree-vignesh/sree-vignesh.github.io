@@ -1,193 +1,119 @@
+/* --- Section Container --- */
 .Projects {
-    width: 100vw;
-    height: 100vh; /* Full viewport height */
-    /*background-color: #00000013;*/
-    display: flex;
-    gap:20px;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* For stacking */
-    overflow: hidden; /* Hide overflow to maintain layout */
-    /* background: url('your-background-image.jpg') no-repeat center center fixed; Optional: background image */
-}
- .section-heading{
-    color:#fc7307 !important;
-    text-decoration: underline;
-    font-family: "Nova Mono",monospace;
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  overflow: visible;
+  /* Prevent scrollbars or overflow cutting */
 }
 
+/* --- Swiper container --- */
 .mySwiper {
-    width: 90%; /* Adjust width for mobile */
-    height: 80%; /* Adjust height for mobile */
-    overflow: visible; /* Allow overflow to show rounded corners */
+  width: 100%;
+  max-width: 85vw;
+  height: auto;
+  /* overflow: visible; */
 }
 
-.project-card-old{
-    /*background: rgba(29, 29, 29, 0.986); /* Semi-transparent background for glass effect */
-    border-radius: 15px; /* Round corners */
-    background-color: #030303;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.418); /* Shadow for depth */
-    padding: 20px;
-    /* filter: blur(10px); */
-    border: 1px solid rgba(32, 32, 32, 0.384);
-    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-    
-    z-index: 1; /* Base z-index for all cards */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    position: relative; /* Allow stacking */
-    margin: 10px; /* Add margin to ensure spacing between cards */
-}
-.project-card-border{
-    border-radius: 20px;
-    border: 1px solid rgba(88, 88, 88, 0);
-    background-color: hsla(0, 0%, 100%, 0.030);
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.418); /* Shadow for depth */
-    
+/* --- Section heading --- */
+.section-heading {
+  color: #fc7307 !important;
+  text-decoration: underline;
+  font-family: "Nova Mono", monospace;
+  margin-bottom: 20px;
 }
 
-/* Additional styles remain the same... */
-.tags{
-    display: flex;
-    gap:10px
+/* --- Individual Slide Layout --- */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px;
 }
-.tag{
-    color: #fc7307;
-    border: 1px solid rgba(255, 255, 255, 0.075);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
 
+/* --- Card --- */
+.project-card-border {
+  border-radius: 20px;
+  border: 1px solid rgba(88, 88, 88, 0);
+  background-color: hsla(0, 0%, 100%, 0.03);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.418);
+  padding: 20px;
+  transition: transform 0.3s ease, border 0.3s ease, opacity 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
 
-    border-radius: 10px;
-    background-color: #ffffff0a;
+.project-card-border:hover {
+  /* transform: translateY(-5px) scale(1.02); */
+  border-color: #c7570263;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px) brightness(0.2);
 }
-.title{
-    font-family: monospace;
-    color: #fc7307;
-    
-    /* backdrop-filter: blur(25px); */
-}
+
+/* --- Card Content --- */
 .card-content {
-    /* text-align: center; */
-    color: #ffffff; /* Text color for better contrast */
-}
-.swiper-pagination-bullet{
-    background-color: #fc7307;
-    /* pointer-events: none; */
-    /* z-index: -1; */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
-/* Style for the Swiper slide */
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-.swiper-slide.swiper-slide-active.terminal.project-card-border {
-    transition: background-color 8s ease, transform 0.3s ease, border 0.5s ease; /* Add transition */
+.title {
+  font-family: monospace;
+  color: #fc7307;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
-.swiper-slide.swiper-slide-active.terminal.project-card-border:hover{
-    /* background-color: #030303d5; */
-    transform: scale(1.025);
-    backdrop-filter: blur(25px) brightness(0.1);
-        /* Blur effect for glassmorphism */
-    border: #c7570263 1px solid;
-    /* transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; */
-        /* Add transition */
-    
-}
-/* All cards */
-.project-card {
-    opacity: 0.8; /* Make all cards slightly transparent */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-/* Active card */
-.swiper-slide-active .project-card {
-    opacity: 1; /* Fully opaque for active slide */
-    transform: scale(1.05); /* Slightly enlarge the active card */
-    z-index: 2; /* Bring the active card to the front */
+.tag {
+  color: #fc7307;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #ffffff0a;
 }
 
-/* Add space between cards */
-.swiper-slide {
-    margin: 0 10px; /* Add margin for spacing */
-}
+/* --- GitHub Button --- */
 .github-link {
-    display: flex;
-    align-items: center;
-    background-color: #27272757;
-    color: rgba(0, 255, 255, 0.849);
-    /* color: #fc7307; */
-
-    border: 1px solid rgba(0, 255, 255, 0.158);
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow:4px 4px 20px rgba(0, 0, 0, 0.541);
-    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Add transition */
-  }
-  
-  
-  
-  .github-link:hover {
-    /* background-color: hsla(0, 0%, 0%, 0.342); */
-    background-color:#c75702;
-    color:black;
-
-    border: 1px solid rgba(252, 113, 7, 0.199);
-    /* color:#994200; */
-    
-  }
-  
-/* Responsive Styles */
-@media (min-width: 600px) {
-    .mySwiper {
-        width: 80%; /* Wider for larger screens */
-        height: 70%; /* Adjust height for larger screens */
-    }
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Show 3 cards on larger screens */
-    .mySwiper {
-        slidesPerView: 3;
-    }
+  display: inline-block;
+  background-color: #27272757;
+  color: rgba(0, 255, 255, 0.849);
+  border: 1px solid rgba(0, 255, 255, 0.158);
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+  align-self: flex-start;
 }
-/* Hide navigation buttons on mobile */
+
+.github-link:hover {
+  background-color: #c75702;
+  color: black;
+  border: 1px solid rgba(252, 113, 7, 0.199);
+}
+
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-      display: none; /* Hide navigation buttons */
-    }
-}
-  
-/* Optionally, you can customize their appearance on larger screens */
-  @media (min-width: 769px) {
-.project-card-border{
-    /* max-width: 50%; */
-}
-    .swiper-button-next,
-    .swiper-button-prev {
-      display: block; /* Show navigation buttons */
-      color: orange;
-      opacity: 25%;
-      transition: opacity 0.3s; /* Smooth transition */
-    }
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-        opacity: 0.85; /* Change opacity on hover */
-    }
-    .project-card-border{
-    padding: 100px;
-
-    }
+  .Projects {
+    padding: 20px 10px;
   }
-  
+
+  .mySwiper {
+    height: auto;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+}
