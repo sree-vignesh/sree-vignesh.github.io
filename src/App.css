@@ -90,7 +90,7 @@ section {
 }
 section {
   width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  height: auto; /* Full viewport height */
   display: flex; /* Optional: use flexbox for centering content */
   justify-content: center; /* Optional: center content horizontally */
   align-items: center; /* Optional: center content vertically */

@@ -1,6 +1,6 @@
 .hero {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
   overflow: hidden;
   display: flex;
@@ -15,25 +15,29 @@ p {
   /* color: rgba(255,172,28,1); */
   font-family: monospace;
 }
-.arrow{
+.arrow {
   z-index: 7;
   color: orange;
   font-family: monospace;
   opacity: 50%;
   /* margin-top: auto; */
-  
 }
-.name{
-    /* text-shadow: 0 0 20px #00ffff00, 0 0 25px #00ffff; */
-    /* background: rgb(0,255,255); */
-    background: linear-gradient(58deg, rgba(0,255,255,1) 0%, rgba(255,172,28,1) 61%, rgba(0,255,255,1) 100%); 
-    /* background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(120,79,0,1) 31%, rgba(255,172,28,1) 61%, rgba(0,255,255,1) 100%); */
+.name {
+  /* text-shadow: 0 0 20px #00ffff00, 0 0 25px #00ffff; */
+  /* background: rgb(0,255,255); */
+  background: linear-gradient(
+    58deg,
+    rgba(0, 255, 255, 1) 0%,
+    rgba(255, 172, 28, 1) 61%,
+    rgba(0, 255, 255, 1) 100%
+  );
+  /* background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(120,79,0,1) 31%, rgba(255,172,28,1) 61%, rgba(0,255,255,1) 100%); */
   background-size: 200% auto;
   background-clip: text;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   font-size: 64px;
   /* font-weight: bold; */
   color: #000000 !important;
@@ -48,22 +52,22 @@ p {
   }
 }
 .qwitcher-grypen-regular {
-  font-family: "Qwitcher Grypen", cursive ;
+  font-family: "Qwitcher Grypen", cursive;
   font-weight: 400;
   font-style: normal;
 }
-.text-bg{
+.text-bg {
   text-align: center;
-  
-  background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+
+  background: linear-gradient(to right, #fff 20%, #ff0 40%, #ff0 60%, #fff 80%);
   background-size: 200% auto;
-  
+
   color: #000;
   background-clip: text;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   animation: shine 1s linear infinite;
   @keyframes shine {
     to {
@@ -74,7 +78,7 @@ p {
 @keyframes glow {
   from {
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-    
+
     /* text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff; */
   }
   to {

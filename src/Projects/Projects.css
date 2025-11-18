@@ -1,108 +1,175 @@
-/* ---------- Section ---------- */
+/* ----------------------------------
+   Section
+---------------------------------- */
 .Projects {
   width: 100%;
-  padding: 60px 20px;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10vh;
 }
 
 .section-heading {
   color: #ff8a2b;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  font-family: "Inter", sans-serif;
-  margin-bottom: 40px;
-  text-shadow: 0 0 20px rgba(255, 138, 43, 0.4);
+  font-family: "Nova Mono";
+  margin-bottom: 55px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 25px rgba(255, 138, 43, 0.45);
+  text-decoration: underline;
 }
 
-/* ---------- Grid Layout ---------- */
+/* ----------------------------------
+   Grid
+---------------------------------- */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 35px;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1350px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
   padding: 10px;
 }
 
-/* ---------- Glass Card ---------- */
+/* ----------------------------------
+   Glass Card
+---------------------------------- */
 .glass-card {
-  backdrop-filter: blur(18px) saturate(180%);
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 25px;
+  padding: 28px;
+  border-radius: 22px;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(7, 6, 6, 0.1);
+  backdrop-filter: blur(20px);
 
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55),
-    inset 0 0 25px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 
-  transition: 0.4s ease;
+  /* Soft depth + glowing edges */
+  /* box-shadow: 0 10px 45px rgba(0, 0, 0, 0.55),
+    inset 0 0 30px rgba(255, 255, 255, 0.05); */
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    border-color 0.35s ease;
   cursor: pointer;
 }
 
-/* Hover – premium lift effect */
+/* Hover - Elegant, premium, bright orange/aqua glow */
 .glass-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  border-color: rgba(255, 136, 0, 0.3);
-  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.65),
-    inset 0 0 35px rgba(255, 255, 255, 0.07), 0 0 25px rgba(255, 136, 0, 0.4);
+  /* transform: translateY(-8px) scale(1.025); */
+
+  border-color: rgba(255, 138, 43, 0.45);
+
+  /* box-shadow: 0 18px 70px rgba(0, 0, 0, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.08), 0 0 30px rgba(255, 138, 43, 0.55),
+    0 0 35px rgba(0, 255, 255, 0.35); Aqua glow */
 }
 
-/* ---------- Typography ---------- */
+/* ----------------------------------
+   Text
+---------------------------------- */
 .project-title {
   color: #ff8a2b;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  font-family: "Inter", sans-serif;
+  font-size: 1.45rem;
+  font-family: "mono";
   font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
 }
 
 .project-desc {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 18px;
-  font-family: "Inter", sans-serif;
+  color: #61dafb;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  font-family: "mono";
 }
 
-/* ---------- Tags ---------- */
+/* ----------------------------------
+   Tags
+---------------------------------- */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .tag {
   padding: 6px 12px;
   font-size: 0.78rem;
   border-radius: 8px;
+
   color: #ff8a2b;
 
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
-/* ---------- Button ---------- */
-.btn {
+/* ----------------------------------
+   Button
+---------------------------------- */
+.button-view-project {
+  padding: 11px 16px;
+  border-radius: 10px;
+  /* 
+  border: 1px solid #ff8a2b; */
+  background: #f0720c;
+
+  color: #030302;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+
+  text-decoration: none;
+  transition: 0.3s ease-out;
+}
+
+.glass-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes footer down */
+  padding: 25px;
+  height: 100%;
+}
+
+/* content area takes natural height */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* clean spacing */
+}
+
+/* footer sticks at bottom always */
+.card-footer {
+  margin-top: 25px;
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* button styling */
+.button-view-project {
   padding: 10px 15px;
   border-radius: 10px;
-  border: 1px solid #ff8a2b;
-  color: #ff8a2b;
+  /* color: #ff8a2b; */
 
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
 
   transition: 0.3s ease;
+  display: inline-block;
 }
 
-.btn:hover {
+.button-view-project:hover {
   background: #ff8a2b;
-  color: black;
-  box-shadow: 0 0 15px rgba(255, 138, 43, 0.6);
+  /* border: 1px solid #61dafb; */
+
+  /* color: #61dafb; */
+  /* box-shadow: 0 0 15px rgba(255, 138, 43, 0.6); */
 }

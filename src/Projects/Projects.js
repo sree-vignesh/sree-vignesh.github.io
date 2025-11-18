@@ -17,20 +17,29 @@ function Projects() {
       <div className="projects-grid">
         {projects.map((project, index) => (
           <div className="glass-card" key={index}>
-            <h2 className="project-title">{project.title}</h2>
-            <p className="project-desc">{project.description}</p>
+            <div className="card-content">
+              <h2 className="project-title">{project.title}</h2>
+              <p className="project-desc">{project.description}</p>
 
-            <div className="tags">
-              {project.tags.map((tag, i) => (
-                <span key={i} className="tag">
-                  {tag}
-                </span>
-              ))}
+              <div className="tags">
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <a className="btn" href={project.link} target="_blank">
-              View Source →
-            </a>
+            <div className="card-footer">
+              <a
+                className="button-view-project"
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Source →
+              </a>
+            </div>
           </div>
         ))}
       </div>
