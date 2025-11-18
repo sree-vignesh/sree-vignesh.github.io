@@ -10,6 +10,9 @@
   padding-top: 10vh;
 }
 
+/* ----------------------------------
+   Heading
+---------------------------------- */
 .section-heading {
   color: #ff8a2b;
   font-size: 2.6rem;
@@ -39,30 +42,56 @@
 .glass-card {
   padding: 28px;
   border-radius: 22px;
-
   background: rgba(7, 6, 6, 0.1);
   backdrop-filter: blur(20px);
-
   border: 1px solid rgba(255, 255, 255, 0.16);
-
-  /* Soft depth + glowing edges */
-  /* box-shadow: 0 10px 45px rgba(0, 0, 0, 0.55),
-    inset 0 0 30px rgba(255, 255, 255, 0.05); */
-
   transition: transform 0.35s ease, box-shadow 0.35s ease,
     border-color 0.35s ease;
   cursor: pointer;
 }
 
-/* Hover - Elegant, premium, bright orange/aqua glow */
-.glass-card:hover {
-  /* transform: translateY(-8px) scale(1.025); */
+/* ----------------------------------
+   Spotlight Container
+---------------------------------- */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+}
 
-  border-color: rgba(255, 138, 43, 0.45);
+/* ----------------------------------
+   Spotlight Effect Layer
+---------------------------------- */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(255, 138, 43, 0.18),
+    rgba(0, 255, 255, 0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
 
-  /* box-shadow: 0 18px 70px rgba(0, 0, 0, 0.7),
-    inset 0 0 40px rgba(255, 255, 255, 0.08), 0 0 30px rgba(255, 138, 43, 0.55),
-    0 0 35px rgba(0, 255, 255, 0.35); Aqua glow */
+/* ----------------------------------
+   Spotlight Active on Hover
+---------------------------------- */
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* ----------------------------------
+   Spotlight JS Helper (attach on root)
+---------------------------------- */
+.glass-card {
+  --spot-x: 50%;
+  --spot-y: 50%;
 }
 
 /* ----------------------------------
@@ -99,12 +128,9 @@
   padding: 6px 12px;
   font-size: 0.78rem;
   border-radius: 8px;
-
   color: #ff8a2b;
-
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.08);
-
   backdrop-filter: blur(12px);
 }
 
@@ -114,62 +140,113 @@
 .button-view-project {
   padding: 11px 16px;
   border-radius: 10px;
-  /* 
-  border: 1px solid #ff8a2b; */
   background: #f0720c;
-
   color: #030302;
-
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: -0.2px;
-
   text-decoration: none;
   transition: 0.3s ease-out;
 }
 
+/* ----------------------------------
+   Card Structure Fix
+---------------------------------- */
 .glass-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pushes footer down */
+  justify-content: space-between;
   padding: 25px;
   height: 100%;
 }
 
-/* content area takes natural height */
+/* ----------------------------------
+   Content Block
+---------------------------------- */
 .card-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px; /* clean spacing */
+  gap: 14px;
 }
 
-/* footer sticks at bottom always */
+/* ----------------------------------
+   Footer Block
+---------------------------------- */
 .card-footer {
   margin-top: 25px;
   padding-top: 15px;
-
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* button styling */
+/* ----------------------------------
+   Button Hover
+---------------------------------- */
 .button-view-project {
   padding: 10px 15px;
   border-radius: 10px;
-  /* color: #ff8a2b; */
-
+  min-width: auto;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
-
   transition: 0.3s ease;
   display: inline-block;
 }
 
 .button-view-project:hover {
   background: #ff8a2b;
-  /* border: 1px solid #61dafb; */
+}
 
-  /* color: #61dafb; */
-  /* box-shadow: 0 0 15px rgba(255, 138, 43, 0.6); */
+/* ----------------------------------
+   Spotlight base: uses --spot-x and --spot-y
+---------------------------------- */
+.glass-card {
+  /* ensure variables have defaults */
+  --spot-x: 50%;
+  --spot-y: 50%;
+  position: relative; /* already present in your file but kept for certainty */
+  overflow: hidden;
+}
+
+/* spotlight overlay (uses CSS variables set from JS) */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* radial gradient centered at the custom property coordinates */
+  /* background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    rgba(255, 138, 43, 0.18) 0%,
+    rgba(0, 255, 255, 0.12) 30%,
+    rgba(0, 255, 255, 0.04) 45%, transparent 60%
+  ); */
+
+  background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    rgba(255, 138, 43, 0.18) 0%,
+    rgba(0, 255, 255, 0.12) 30%,
+    rgba(0, 255, 255, 0.04) 45%,
+    transparent 60%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms linear, transform 160ms linear;
+  mix-blend-mode: screen; /* improves visibility on dark backgrounds */
+  z-index: 1;
+}
+
+/* show spotlight when hovered or when JS added .has-spot (for touch) */
+.glass-card:hover::before,
+.glass-card.has-spot::before {
+  opacity: 1;
+}
+
+/* make sure content stays above overlay if needed */
+.glass-card > * {
+  position: relative;
+  z-index: 2;
 }
