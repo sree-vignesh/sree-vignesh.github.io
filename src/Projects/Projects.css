@@ -64,6 +64,10 @@
   opacity: 1;
   /* color: #ff8a2b; */
 }
+.glass-card:hover .divider-card {
+  border-top-color: rgba(255, 187, 0, 0.418);
+  transition: 0.3s ease; /* ⭐ smooth animation */
+}
 
 /* ----------------------------------
    Spotlight Container
