@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap");
+
 .zeyada-regular {
   font-family: "Zeyada", cursive;
   font-weight: 400;
@@ -24,6 +25,7 @@
   z-index: 7;
   /* min-height: 100vh; */
   position: relative;
+  scroll-snap-align: none !important;
 }
 .Terminal {
   /* background-color: blue; */
@@ -66,7 +68,7 @@ body {
 }
 
 section {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   min-height: 100vh;
   height: auto;
 }

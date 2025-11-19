@@ -81,6 +81,7 @@ function Projects() {
           <div className="glass-card" key={index} data-index={index}>
             <div className="card-content">
               <h2 className="project-title">{project.title}</h2>
+              <hr className="divider-card" />
               <p className="project-desc">{project.description}</p>
 
               <div className="tags">
@@ -99,8 +100,9 @@ function Projects() {
                 target="_blank"
                 rel="noreferrer"
               >
-                View Source →
+                View Source
               </a>
+              {/* <div className="bg-red-500 w-20 h-20">Tailwind Works!</div> */}
             </div>
           </div>
         ))}
