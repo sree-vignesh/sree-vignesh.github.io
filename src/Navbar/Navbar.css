@@ -1,69 +1,158 @@
-/* Floating Glass Navbar */
+/* ====================================================================================
+   Desktop Floating Glass Navbar
+   ==================================================================================== */
+
 .sidebar {
   font-family: monospace;
-  /* font-size: 500px; */
   position: fixed;
   top: 20px;
-  /* From top */
   left: 50%;
-  /* Center horizontally */
   transform: translateX(-50%);
   width: auto;
-  /* Fit content */
   min-width: 300px;
-  /* Give it some width */
   background: rgba(255, 255, 255, 0);
-  /* Transparent glass */
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(200%);
   border-radius: 40px;
-  /* Pill shape */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 40px;
-  /* Space between items */
   padding: 12px 30px;
-  box-shadow:
-        /* inset 2px 2px 6px rgba(255, 255, 255, 0.15), */
-        /* inset -2px -2px 6px rgba(0, 0, 0, 0.25); */ 0
-    8px 50px rgba(0, 0, 0, 0.35);
-  /* Floating effect */
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 0.35);
   z-index: 1000;
 }
 
-/* Brand (optional left side) */
-.brand {
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-/* Navigation links */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* Normal text links */
 .nav-links a {
-  /* color: rgba(255, 255, 255, 0.85); */
   color: rgba(0, 255, 255, 0.747);
   font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
+.nav-links a:hover {
+  color: orange;
+  transform: scaleX(1.1);
+}
+
 .nav-links a:active {
   color: red;
 }
 
-.nav-links a:hover {
-  /* color: aqua; */
-  color: orange;
-  /* transform: scale(1.1); */
-  transform: scaleX(1.1);
+/* ====================================================================================
+   Default (Desktop) — Hide mobile menu by DEFAULT
+   ==================================================================================== */
+
+.mobile-menu-top,
+.mobile-popup {
+  display: none !important;
+}
+
+/* ====================================================================================
+   Mobile Version — Show hamburger & popup only on mobile
+   ==================================================================================== */
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-menu-top {
+    display: flex !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(3px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
+    transition: 0.25s ease;
+    border: 1px solid rgba(0, 255, 255, 0.08);
+  }
+
+  .mobile-menu-top span {
+    width: 26px;
+    height: 3px;
+    /* background: cyan; */
+    background: rgba(0, 255, 255, 0.918);
+
+    border-radius: 6px;
+    opacity: 80%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  .mobile-menu-top.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .mobile-menu-top.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-top.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  .mobile-popup {
+    display: flex !important;
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    width: 160px;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(0, 255, 255, 0.08);
+
+    backdrop-filter: blur(5px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.25s ease;
+    z-index: 1500;
+  }
+
+  .mobile-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-popup a {
+    font-size: 1rem;
+    font-family: monospace;
+    color: aqua;
+    text-decoration: none;
+    padding: 8px 8px;
+    border-radius: 10px;
+    transition: 0.2s ease;
+  }
+
+  .mobile-popup a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: orange;
+  }
 }

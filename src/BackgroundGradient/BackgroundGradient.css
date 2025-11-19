@@ -1,16 +1,10 @@
 .Bg {
-    /* background: rgba(255, 77, 77, 0.712); */
-    min-width: 100vw;
-    min-height: 100vh;
-    
+  /* background: rgba(255, 77, 77, 0.712); */
+  min-width: 100vw;
+  min-height: 100vh;
+
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-   
-    
-    /* z-index: 7; */
-    /* position: relative; */
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* align-items: center; Center vertically */
-    /* position: relative; */
-    position: fixed;
-  }
+
+  position: fixed;
+  /* position: relative; */
+}

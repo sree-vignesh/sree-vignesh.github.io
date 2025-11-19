@@ -2,66 +2,43 @@
   {
     "title": "Legion Scripts For Linux",
     "description": "Enhance your Linux experience on Legion laptops with these scripts, unlocking exclusive LEGION features typically reserved for Windows. Simplify tasks and optimize performance, ensuring you get the most out of your device while enjoying the benefits of Linux.",
-    "tags": [
-      "Shell"
-    ],
+    "tags": ["Shell"],
     "link": "https://github.com/sree-vignesh/legion-scripts"
   },
   {
     "title": "Image-to-ASCII-Js",
     "description": "This project converts images into an ASCII-friendly format and displays them in the terminal. It utilizes image-js and image-to-ascii libraries to show ASCII art representations of your images.",
-    "tags": [
-      "NodeJS",
-      "JavaScript",
-      "Python"
-    ],
+    "tags": ["NodeJS", "JavaScript", "Python"],
     "link": "https://github.com/sree-vignesh/image-to-ascii-js"
   },
   {
     "title": "PrintEase",
     "description": "Allows students to upload documents, choose print options, and track job status, reducing wait times and improving efficiency",
-    "tags": [
-      "NodeJS",
-      "Flutter"
-    ],
+    "tags": ["NodeJS", "Flutter"],
     "link": "https://github.com/sree-vignesh/printease_server"
   },
   {
     "title": "Department Symposium Webpage",
     "description": "This project features a visually appealing and user-friendly website designed for a departmental symposium.",
-    "tags": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
+    "tags": ["HTML", "CSS", "JavaScript"],
     "link": "https://github.com/sree-vignesh/symposium-website"
   },
   {
     "title": "Terminal Portfolio",
     "description": "This is my previous portfolio presented in a terminal-style interface. The terminal window you see above originated from this design.",
-    "tags": [
-      "JavaScript",
-      "CSS"
-    ],
+    "tags": ["JavaScript", "CSS"],
     "link": "https://github.com/sree-vignesh/terminal-site"
   },
   {
     "title": "Virtual Mock Interview",
     "description": "Developed a VR application during the IEEE Metaverse conference at IIIT Bangalore, utilizing Unity and Blender.",
-    "tags": [
-      "Unity",
-      "Blender"
-    ],
+    "tags": ["Unity", "Blender"],
     "link": "https://github.com/sree-vignesh/vr-interview-windows"
   },
   {
     "title": "This Site !",
     "description": "This is currently my portfolio. Feel free to explore on GitHub and, if you like it, please give it a star!",
-    "tags": [
-      "ReactJS",
-      "Bootstrap",
-      "SCSS"
-    ],
+    "tags": ["ReactJS", "Bootstrap", "SCSS"],
     "link": "https://github.com/sree-vignesh/sree-vignesh.github.io"
   }
 ]

@@ -1,193 +1,290 @@
+/* ----------------------------------
+   Section
+---------------------------------- */
 .Projects {
-    width: 100vw;
-    height: 100vh; /* Full viewport height */
-    /*background-color: #00000013;*/
-    display: flex;
-    gap:20px;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* For stacking */
-    overflow: hidden; /* Hide overflow to maintain layout */
-    /* background: url('your-background-image.jpg') no-repeat center center fixed; Optional: background image */
-}
- .section-heading{
-    color:#fc7307 !important;
-    text-decoration: underline;
-    font-family: "Nova Mono",monospace;
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10vh;
 }
 
-.mySwiper {
-    width: 90%; /* Adjust width for mobile */
-    height: 80%; /* Adjust height for mobile */
-    overflow: visible; /* Allow overflow to show rounded corners */
+/* ----------------------------------
+   Heading
+---------------------------------- */
+.section-heading {
+  color: #ff8a2b;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: "Nova Mono";
+  margin-bottom: 55px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 25px rgba(255, 138, 43, 0.45);
+  text-decoration: underline;
 }
 
-.project-card-old{
-    /*background: rgba(29, 29, 29, 0.986); /* Semi-transparent background for glass effect */
-    border-radius: 15px; /* Round corners */
-    background-color: #030303;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.418); /* Shadow for depth */
-    padding: 20px;
-    /* filter: blur(10px); */
-    border: 1px solid rgba(32, 32, 32, 0.384);
-    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-    
-    z-index: 1; /* Base z-index for all cards */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    position: relative; /* Allow stacking */
-    margin: 10px; /* Add margin to ensure spacing between cards */
-}
-.project-card-border{
-    border-radius: 20px;
-    border: 1px solid rgba(88, 88, 88, 0);
-    background-color: hsla(0, 0%, 100%, 0.030);
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.418); /* Shadow for depth */
-    
+/* ----------------------------------
+   Grid
+---------------------------------- */
+.projects-grid {
+  width: 100%;
+  max-width: 1350px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 10px;
 }
 
-/* Additional styles remain the same... */
-.tags{
-    display: flex;
-    gap:10px
+/* ----------------------------------
+   Glass Card
+---------------------------------- */
+.glass-card {
+  padding: 28px;
+  border-radius: 22px;
+  background: rgba(7, 6, 6, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  cursor: pointer;
 }
-.tag{
-    color: #fc7307;
-    border: 1px solid rgba(255, 255, 255, 0.075);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
 
+.glass-card:hover {
+  border: 1px solid rgba(255, 187, 0, 0.418);
+  backdrop-filter: blur(50px);
+}
+/* ----------------------------------
+   Horizontal line
+---------------------------------- */
+.divider-card {
+  margin: 0;
+  border: none;
+  border-top: 1px solid #ff8a2b42;
+  opacity: 1;
+  /* color: #ff8a2b; */
+}
+.glass-card:hover .divider-card {
+  border-top-color: rgba(255, 187, 0, 0.418);
+  transition: 0.3s ease; /* ⭐ smooth animation */
+}
 
-    border-radius: 10px;
-    background-color: #ffffff0a;
+/* ----------------------------------
+   Spotlight Container
+---------------------------------- */
+.glass-card {
+  position: relative;
+  overflow: hidden;
 }
-.title{
-    font-family: monospace;
-    color: #fc7307;
-    
-    /* backdrop-filter: blur(25px); */
+
+/* ----------------------------------
+   Spotlight Effect Layer
+---------------------------------- */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(255, 138, 43, 0.18),
+    rgba(0, 255, 255, 0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
 }
+
+/* ----------------------------------
+   Spotlight Active on Hover
+---------------------------------- */
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* ----------------------------------
+   Spotlight JS Helper (attach on root)
+---------------------------------- */
+.glass-card {
+  --spot-x: 50%;
+  --spot-y: 50%;
+}
+
+/* ----------------------------------
+   Text
+---------------------------------- */
+.project-title {
+  color: #ff8a2b;
+  font-size: 1.45rem;
+  font-family: "mono";
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.project-desc {
+  color: #61dafb;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  font-family: "mono";
+}
+
+/* ----------------------------------
+   Tags
+---------------------------------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: auto;
+  width: 100% !important;
+  align-self: stretch !important;
+  justify-content: flex-start;
+}
+
+.tag {
+  padding: 5px 15px;
+  font-size: 0.85rem;
+  font-family: "mono";
+  border-radius: 15px;
+  color: #ff8a2b;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  /* background: rgba(255, 255, 255, 0.08); */
+  background: #f7f7f711;
+  backdrop-filter: blur(12px);
+  display: inline-flex; /* auto width based on content */
+  width: auto; /* ensures natural width */
+  white-space: nowrap; /* prevents breaking tags */
+}
+
+/* ----------------------------------
+   Button
+---------------------------------- */
+.button-view-project {
+  padding: 1px 16px;
+  border-radius: 10px;
+  background: #b85c11;
+  color: #030302;
+  font-family: "mono";
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 2.3px;
+  text-decoration: none;
+  transition: 0.3s ease-out;
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  min-width: auto;
+  text-decoration: none;
+  text-align: center;
+
+  display: inline-block;
+}
+.button-view-project:hover {
+  background: #ff8a2b;
+}
+
+/* ----------------------------------
+   Card Structure Fix
+---------------------------------- */
+.glass-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  height: 100%;
+}
+
+/* ----------------------------------
+   Content Block
+---------------------------------- */
 .card-content {
-    /* text-align: center; */
-    color: #ffffff; /* Text color for better contrast */
-}
-.swiper-pagination-bullet{
-    background-color: #fc7307;
-    /* pointer-events: none; */
-    /* z-index: -1; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-/* Style for the Swiper slide */
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-.swiper-slide.swiper-slide-active.terminal.project-card-border {
-    transition: background-color 8s ease, transform 0.3s ease, border 0.5s ease; /* Add transition */
-}
-
-.swiper-slide.swiper-slide-active.terminal.project-card-border:hover{
-    /* background-color: #030303d5; */
-    transform: scale(1.025);
-    backdrop-filter: blur(25px) brightness(0.1);
-        /* Blur effect for glassmorphism */
-    border: #c7570263 1px solid;
-    /* transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; */
-        /* Add transition */
-    
-}
-/* All cards */
-.project-card {
-    opacity: 0.8; /* Make all cards slightly transparent */
+/* ----------------------------------
+   Footer Block
+---------------------------------- */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Active card */
-.swiper-slide-active .project-card {
-    opacity: 1; /* Fully opaque for active slide */
-    transform: scale(1.05); /* Slightly enlarge the active card */
-    z-index: 2; /* Bring the active card to the front */
+/* ----------------------------------
+   Button Hover
+---------------------------------- */
+/* .button-view-project {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  min-width: auto;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  display: inline-block;
+} */
+
+/* ----------------------------------
+   Spotlight base: uses --spot-x and --spot-y
+---------------------------------- */
+.glass-card {
+  /* ensure variables have defaults */
+  --spot-x: 50%;
+  --spot-y: 50%;
+  position: relative; /* already present in your file but kept for certainty */
+  overflow: hidden;
 }
 
-/* Add space between cards */
-.swiper-slide {
-    margin: 0 10px; /* Add margin for spacing */
+/* spotlight overlay (uses CSS variables set from JS) */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* radial gradient centered at the custom property coordinates */
+  /* background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    rgba(255, 138, 43, 0.18) 0%,
+    rgba(0, 255, 255, 0.12) 30%,
+    rgba(0, 255, 255, 0.04) 45%, transparent 60%
+  ); */
+
+  background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    /* rgba(255, 138, 43, 0.18) 0%, rgba(0, 0, 0, 0.329) 30%, */
+      /* rgba(0, 255, 255, 0.04) 45%, */ transparent 60%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms linear, transform 160ms linear;
+  mix-blend-mode: screen; /* improves visibility on dark backgrounds */
+  z-index: 1;
 }
-.github-link {
-    display: flex;
-    align-items: center;
-    background-color: #27272757;
-    color: rgba(0, 255, 255, 0.849);
-    /* color: #fc7307; */
 
-    border: 1px solid rgba(0, 255, 255, 0.158);
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow:4px 4px 20px rgba(0, 0, 0, 0.541);
-    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Add transition */
-  }
-  
-  
-  
-  .github-link:hover {
-    /* background-color: hsla(0, 0%, 0%, 0.342); */
-    background-color:#c75702;
-    color:black;
-
-    border: 1px solid rgba(252, 113, 7, 0.199);
-    /* color:#994200; */
-    
-  }
-  
-/* Responsive Styles */
-@media (min-width: 600px) {
-    .mySwiper {
-        width: 80%; /* Wider for larger screens */
-        height: 70%; /* Adjust height for larger screens */
-    }
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Show 3 cards on larger screens */
-    .mySwiper {
-        slidesPerView: 3;
-    }
+/* show spotlight when hovered or when JS added .has-spot (for touch) */
+.glass-card:hover::before,
+.glass-card.has-spot::before {
+  opacity: 1;
 }
-/* Hide navigation buttons on mobile */
-@media (max-width: 768px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-      display: none; /* Hide navigation buttons */
-    }
-}
-  
-/* Optionally, you can customize their appearance on larger screens */
-  @media (min-width: 769px) {
-.project-card-border{
-    /* max-width: 50%; */
-}
-    .swiper-button-next,
-    .swiper-button-prev {
-      display: block; /* Show navigation buttons */
-      color: orange;
-      opacity: 25%;
-      transition: opacity 0.3s; /* Smooth transition */
-    }
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-        opacity: 0.85; /* Change opacity on hover */
-    }
-    .project-card-border{
-    padding: 100px;
 
-    }
-  }
-  
+/* make sure content stays above overlay if needed */
+.glass-card > * {
+  position: relative;
+  z-index: 2;
+}
