@@ -1,5 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import "./tailwind.css";
+
 import Hero from "./Hero/Hero";
 import Terminal from "./Terminal/Terminal";
 import Projects from "./Projects/Projects";
