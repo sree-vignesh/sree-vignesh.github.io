@@ -33,7 +33,7 @@ function Hero() {
     >
       {/* <div className="navibar">helo</div> */}
       <StarAnimation />
-      <div className="glass p-4 d-flex flex-row align-items-center">
+      <div className="glass ">
         <div className="greetings d-flex flex-column align-items-center ">
           <p className="fs-5 nova-mono-regular" style={{ opacity: 0.7 }}>
             Greetings,
@@ -50,8 +50,8 @@ function Hero() {
           </p>
         </div>
         {/* <div className="three-scene">{ <ThreeScene /> }</div> */}
+        <div className="arrow fs-5">↓</div>
       </div>
-      <div className="arrow fs-5">↓</div>
     </section>
   );
 }

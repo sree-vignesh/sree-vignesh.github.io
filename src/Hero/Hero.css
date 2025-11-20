@@ -2,7 +2,7 @@
   width: 100vw;
   height: auto;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,11 +93,11 @@ p {
   /* backdrop-filter: blur(10px); */
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
   min-width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   z-index: 7;
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center; /* Center vertically */
   /* position: relative; */
@@ -106,3 +106,128 @@ p {
 .three-scene {
   z-index: 1; /* Place it below the glass div */
 }
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap");
+
+.zeyada-regular {
+  font-family: "Zeyada", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nova-mono-regular {
+  font-family: "Nova Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* =============================================================================
+   Global Layout & Page Structure
+   ========================================================================== */
+
+/* Required for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* IMPORTANT FIX:
+   Removed overflow: hidden because it blocked scrolling anywhere
+   except inside center elements. */
+body {
+  margin: 0;
+  background-color: black;
+  height: 100%;
+}
+
+/* Main React container alignment */
+.App {
+  text-align: center;
+}
+
+/* Background container behind sections */
+.background {
+  scroll-behavior: smooth;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+  background-size: cover;
+}
+
+/* =============================================================================
+   Sections
+   ========================================================================== */
+
+section {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual section stacks — no style edits */
+.Projects {
+  z-index: 7;
+  position: relative;
+}
+
+.Contact {
+  z-index: 7;
+  position: relative;
+  scroll-snap-align: none !important;
+}
+
+.Terminal {
+  z-index: 7;
+  position: relative;
+}
+
+.about .project {
+  z-index: 4;
+}
+
+.name {
+}
+
+/* =============================================================================
+   Scroll Container (snap scrolling)
+   ========================================================================== */
+
+.app-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  background-color: #282c34;
+  overscroll-behavior: contain;
+}
+
+/* =============================================================================
+   Logo
+   ========================================================================== */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* =============================================================================
+   Greetings part
+   ========================================================================== */
+
+/* .greetings {
+  display: flex;
+  flex-direction: column;
+} */
