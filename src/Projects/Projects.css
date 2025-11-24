@@ -120,7 +120,7 @@
 .project-title {
   color: #ff8a2b;
   font-size: 1.45rem;
-  font-family: "mono";
+  /* font-family: "mono"; */
   font-weight: 700;
   margin-bottom: 12px;
   letter-spacing: -0.3px;
@@ -131,7 +131,7 @@
   font-size: 0.97rem;
   line-height: 1.55;
   margin-bottom: 20px;
-  font-family: "mono";
+  /* font-family: "mono"; */
 }
 
 /* ----------------------------------
@@ -151,7 +151,7 @@
 .tag {
   padding: 5px 15px;
   font-size: 0.85rem;
-  font-family: "mono";
+  /* font-family: "mono"; */
   border-radius: 15px;
   color: #ff8a2b;
   /* border: 1px solid rgba(255, 255, 255, 0.18); */
@@ -171,7 +171,7 @@
   border-radius: 10px;
   background: #b85c11;
   color: #030302;
-  font-family: "mono";
+  /* font-family: "mono"; */
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 2.3px;
