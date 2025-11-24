@@ -23,6 +23,13 @@ button {
   font-weight: normal;
   border: none;
 }
+button:hover {
+  text-shadow: 0 0 8px currentColor;
+  /* box-shadow: 0 0 10px currentColor; */
+  /* transform: translateY(-1px); */
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* mobile view — stack vertically */
 @media (max-width: 600px) {
   .btn-container {
