@@ -40,11 +40,9 @@ function Hero() {
             Greetings,
           </p>
 
-          <h1 className=" fs-1 fw-bold name nova-mono-regular">
+          <h1 className=" fs-1  fw-bold name nova-mono-regular">
             I'm Sree Vignesh!
           </h1>
-          <br />
-          <br />
 
           <p className="zeyada-regular fs-2 " style={{ opacity: 0.9 }}>
             (un)professional dev.

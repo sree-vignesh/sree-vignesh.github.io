@@ -8,7 +8,7 @@
 button {
   padding: 8px 16px;
   border: 1px solid rgba(0, 255, 255, 0.103);
-  background: rgba(5, 122, 255, 0); /* light transparent tint */
+  background: rgba(5, 122, 255, 0.09); /* light transparent tint */
   /* color: orange; */
   color: aqua;
   border-radius: 4px !important;
@@ -27,7 +27,7 @@ button {
 @media (max-width: 600px) {
   .btn-container {
     flex-direction: column;
-    width: 100%;
+    width: 85%;
   }
 
   .btn-container a {
@@ -36,5 +36,11 @@ button {
 
   .btn-container button {
     width: 100%;
+  }
+
+  .name.name {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: xx-large !important;
   }
 }
