@@ -1,0 +1,53 @@
+.btn-container {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  font-family: monospace;
+  font-size: x-large;
+}
+
+button {
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 255, 255, 0.103);
+  background: rgba(5, 122, 255, 0.09); /* light transparent tint */
+  /* color: orange; */
+  color: aqua;
+  border-radius: 4px !important;
+  cursor: pointer;
+  backdrop-filter: blur(80px); /* BLUR */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+}
+.primary {
+  background-color: rgba(255, 166, 0, 0.884);
+  /* background-color: rgba(0, 255, 255, 0.541); */
+  color: black;
+  font-weight: normal;
+  border: none;
+}
+button:hover {
+  text-shadow: 0 0 8px currentColor;
+  /* box-shadow: 0 0 10px currentColor; */
+  /* transform: translateY(-1px); */
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* mobile view — stack vertically */
+@media (max-width: 600px) {
+  .btn-container {
+    flex-direction: column;
+    width: 85%;
+  }
+
+  .btn-container a {
+    width: 100%;
+  }
+
+  .btn-container button {
+    width: 100%;
+  }
+
+  .name.name {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: xx-large !important;
+  }
+}
