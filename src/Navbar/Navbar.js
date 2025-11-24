@@ -13,6 +13,12 @@ function NavigationBar() {
           <Nav.Link href="#about">About Me</Nav.Link>
           <Nav.Link href="#projects">Projects</Nav.Link>
           <Nav.Link href="#contact">Contact</Nav.Link>
+          <Nav.Link
+            className="nav-resume"
+            href="https://overleaf-viewer.vercel.app/view/wdfgcctzrvtq"
+          >
+            Resume
+          </Nav.Link>
         </Nav>
       </div>
 
@@ -36,6 +42,13 @@ function NavigationBar() {
         </a>
         <a href="#contact" onClick={() => setOpen(false)}>
           Contact
+        </a>
+        <a
+          className="nav-resume"
+          href="https://overleaf-viewer.vercel.app/view/wdfgcctzrvtq"
+          onClick={() => setOpen(false)}
+        >
+          Resume
         </a>
       </div>
     </>
