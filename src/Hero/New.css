@@ -2,20 +2,39 @@
   display: flex;
   gap: 10px; /* space between buttons */
   font-family: monospace;
+  font-size: x-large;
 }
 
 button {
   padding: 8px 16px;
-  border: 1px solid rgba(255, 145, 0, 0.103);
+  border: 1px solid rgba(0, 255, 255, 0.103);
   background: rgba(5, 122, 255, 0); /* light transparent tint */
-  color: orange;
-  border-radius: 10px !important;
+  /* color: orange; */
+  color: aqua;
+  border-radius: 4px !important;
   cursor: pointer;
   backdrop-filter: blur(80px); /* BLUR */
   -webkit-backdrop-filter: blur(8px); /* Safari support */
 }
 .primary {
   background-color: rgba(255, 166, 0, 0.884);
+  /* background-color: rgba(0, 255, 255, 0.541); */
   color: black;
   font-weight: normal;
+  border: none;
+}
+/* mobile view — stack vertically */
+@media (max-width: 600px) {
+  .btn-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-container a {
+    width: 100%;
+  }
+
+  .btn-container button {
+    width: 100%;
+  }
 }

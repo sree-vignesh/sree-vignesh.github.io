@@ -49,9 +49,9 @@ function Hero() {
           <p className="zeyada-regular fs-2 " style={{ opacity: 0.9 }}>
             (un)professional dev.
           </p>
-        </div>
-        {/* <div className="three-scene">{ <ThreeScene /> }</div> */}
-        <div className="">
+
+          {/* <div className="three-scene">{ <ThreeScene /> }</div> */}
+
           <div className="btn-container">
             {" "}
             <a href="#about">
