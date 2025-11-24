@@ -1,0 +1,21 @@
+.btn-container {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  font-family: monospace;
+}
+
+button {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 145, 0, 0.103);
+  background: rgba(5, 122, 255, 0); /* light transparent tint */
+  color: orange;
+  border-radius: 10px !important;
+  cursor: pointer;
+  backdrop-filter: blur(80px); /* BLUR */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+}
+.primary {
+  background-color: rgba(255, 166, 0, 0.884);
+  color: black;
+  font-weight: normal;
+}

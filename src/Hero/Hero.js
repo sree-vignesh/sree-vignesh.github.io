@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Hero.css"; // Your styles for the hero section
 import "./Stars.css"; // Your styles for the stars
 import ThreeScene from "./Three"; // Assuming this is where your rotating cube component is
+import "./New.css";
 
 function Hero() {
   const heroRef = useRef(null);
@@ -50,7 +51,21 @@ function Hero() {
           </p>
         </div>
         {/* <div className="three-scene">{ <ThreeScene /> }</div> */}
-        <div className="arrow fs-5">↓</div>
+        <div className="">
+          <div className="btn-container">
+            {" "}
+            <a href="#about">
+              <button className="primary">About me</button>
+            </a>
+            <a
+              href="https://overleaf-viewer.vercel.app/view/wdfgcctzrvtq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button>Resume</button>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
