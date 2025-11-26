@@ -1,11 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Hero.css"; // Your styles for the hero section
-import "./Stars.css"; // Your styles for the stars
-import ThreeScene from "./Three"; // Assuming this is where your rotating cube component is
+import "./Hero.css";
+import "./Stars.css";
+import ThreeScene from "./Three";
+import "./New.css";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 function Hero() {
   const heroRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  // NEW: state for resume modal
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,27 +37,63 @@ function Hero() {
       ref={heroRef}
       className="hero d-flex justify-content-center align-items-center flex-column"
     >
-      {/* <div className="navibar">helo</div> */}
       <StarAnimation />
-      <div className="glass ">
-        <div className="greetings d-flex flex-column align-items-center ">
+      <div className="glass">
+        <div className="greetings d-flex flex-column align-items-center">
           <p className="fs-5 nova-mono-regular" style={{ opacity: 0.7 }}>
             Greetings,
           </p>
 
-          <h1 className=" fs-1 fw-bold name nova-mono-regular">
+          <h1 className="fs-1 fw-bold name nova-mono-regular">
             I'm Sree Vignesh!
           </h1>
-          <br />
-          <br />
 
-          <p className="zeyada-regular fs-2 " style={{ opacity: 0.9 }}>
+          <p className="zeyada-regular fs-2" style={{ opacity: 0.9 }}>
             (un)professional dev.
           </p>
+
+          <div className="btn-container">
+            <a href="#about">
+              <button className="primary">About me</button>
+            </a>
+
+            {/* UPDATED RESUME BUTTON */}
+            <button onClick={() => setResumeOpen(true)}>Resume</button>
+          </div>
         </div>
-        {/* <div className="three-scene">{ <ThreeScene /> }</div> */}
-        <div className="arrow fs-5">↓</div>
+        <div className="social-row">
+          <a href="https://github.com/sree-vignesh" target="_blank">
+            <FaGithub />
+          </a>
+          <a href="mailto:reach.sreevignesh@email.com">
+            <HiMail className="HiMail" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/sreevigneshc/" target="_blank">
+            <FaLinkedin />
+          </a>
+        </div>
       </div>
+
+      {/* RESUME POPUP MODAL */}
+      {resumeOpen && (
+        <div className="resume-backdrop">
+          <div className="resume-modal">
+            <button
+              className="resume-close"
+              onClick={() => setResumeOpen(false)}
+            >
+              ✕
+            </button>
+
+            <iframe
+              src="https://overleaf-viewer.vercel.app/view/wdfgcctzrvtq"
+              title="Resume"
+              className="resume-iframe"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

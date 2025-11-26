@@ -5,6 +5,9 @@ import "./Navbar.css";
 function NavigationBar() {
   const [open, setOpen] = useState(false);
 
+  // NEW: Resume modal state
+  const [resumeOpen, setResumeOpen] = useState(false);
+
   return (
     <>
       {/* DESKTOP NAVBAR */}
@@ -13,6 +16,15 @@ function NavigationBar() {
           <Nav.Link href="#about">About Me</Nav.Link>
           <Nav.Link href="#projects">Projects</Nav.Link>
           <Nav.Link href="#contact">Contact</Nav.Link>
+
+          {/* UPDATED RESUME (OPEN MODAL) */}
+          <Nav.Link
+            className="nav-resume"
+            onClick={() => setResumeOpen(true)}
+            style={{ cursor: "pointer" }}
+          >
+            Resume
+          </Nav.Link>
         </Nav>
       </div>
 
@@ -37,7 +49,39 @@ function NavigationBar() {
         <a href="#contact" onClick={() => setOpen(false)}>
           Contact
         </a>
+
+        {/* MOBILE RESUME */}
+        <a
+          className="nav-resume"
+          onClick={() => {
+            setOpen(false);
+            setResumeOpen(true);
+          }}
+          style={{ cursor: "pointer" }}
+        >
+          Resume
+        </a>
       </div>
+
+      {/* RESUME POPUP MODAL */}
+      {resumeOpen && (
+        <div className="resume-backdrop">
+          <div className="resume-modal">
+            <button
+              className="resume-close"
+              onClick={() => setResumeOpen(false)}
+            >
+              ✕
+            </button>
+
+            <iframe
+              src="https://overleaf-viewer.vercel.app/view/wdfgcctzrvtq"
+              title="Resume"
+              className="resume-iframe"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </>
   );
 }

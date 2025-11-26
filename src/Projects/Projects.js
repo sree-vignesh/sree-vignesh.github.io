@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Projects.css";
+import { FaGithub } from "react-icons/fa";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -100,6 +101,7 @@ function Projects() {
                 target="_blank"
                 rel="noreferrer"
               >
+                {/* <FaGithub /> */}
                 View Source
               </a>
               {/* <div className="bg-red-500 w-20 h-20">Tailwind Works!</div> */}
