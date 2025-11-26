@@ -1,7 +1,5 @@
 export const password = "n0t4p@55w0rd!";
-export const linkedin = "https://www.linkedin.com/in/sree-vignesh-c-807284249";
-export const instagram =
-  "https://www.instagram.com/w.i.kki?igsh=MWU4aHBzdmw5bXo1cg==";
+export const linkedin = "https://www.linkedin.com/in/sreevigneshc/";
 export const github = "https://github.com/sree-vignesh/";
 export const email = "mailto:reach.sreevignesh@gmail.com";
 
@@ -20,7 +18,6 @@ export const whois = [
 
 export const social = [
   `linkedin       <a href="${linkedin}" target="_blank">linkedin/sree-vignesh</a>`,
-  `instagram      <a href="${instagram}" target="_blank">instagram/sree-vignesh</a>`,
   `github         <a href="${github}" target="_blank">github/sree-vignesh</a>`,
 ];
 
