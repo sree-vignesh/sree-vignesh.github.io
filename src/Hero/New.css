@@ -76,6 +76,27 @@ button:hover {
   height: 100%;
   border: none;
 }
+.social-row {
+  margin-top: 35px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-row a {
+  font-size: 20px;
+  color: aqua;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+HiMail {
+  font-size: 22.6px;
+}
+.social-row a:hover {
+  opacity: 1;
+  transform: scale(1.18);
+}
 
 /* mobile view — stack vertically */
 @media (max-width: 600px) {

@@ -3,6 +3,8 @@ import "./Hero.css";
 import "./Stars.css";
 import ThreeScene from "./Three";
 import "./New.css";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 function Hero() {
   const heroRef = useRef(null);
@@ -58,6 +60,18 @@ function Hero() {
             {/* UPDATED RESUME BUTTON */}
             <button onClick={() => setResumeOpen(true)}>Resume</button>
           </div>
+        </div>
+        <div className="social-row">
+          <a href="https://github.com/sree-vignesh" target="_blank">
+            <FaGithub />
+          </a>
+          <a href="mailto:reach.sreevignesh@email.com">
+            <HiMail className="HiMail" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/sreevigneshc/" target="_blank">
+            <FaLinkedin />
+          </a>
         </div>
       </div>
 

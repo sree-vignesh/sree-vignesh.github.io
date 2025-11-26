@@ -30,7 +30,7 @@ function Contact() {
               Email
             </a>
             <a
-              href="https://www.linkedin.com/in/sree-vignesh-c-807284249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/sreevigneshc/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
