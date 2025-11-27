@@ -1,10 +1,17 @@
 [
   {
+    "title": "Overleaf PDF Viewer",
+    "description": "Overleaf Viewer is a small utility that converts a public Overleaf share link into a permanent, stable URL that always serves the latest compiled PDF",
+    "tags": ["NextJS", "TypeScript"],
+    "link": "https://github.com/sree-vignesh/overleaf-viewer"
+  },
+  {
     "title": "Legion Scripts For Linux",
-    "description": "Enhance your Linux experience on Legion laptops with these scripts, unlocking exclusive LEGION features typically reserved for Windows. Simplify tasks and optimize performance, ensuring you get the most out of your device while enjoying the benefits of Linux.",
+    "description": "Enhance your Linux experience on Legion laptops with these scripts, unlocking exclusive LEGION features typically reserved for Windows.",
     "tags": ["Shell"],
     "link": "https://github.com/sree-vignesh/legion-scripts"
   },
+
   {
     "title": "Image-to-ASCII-Js",
     "description": "This project converts images into an ASCII-friendly format and displays them in the terminal. It utilizes image-js and image-to-ascii libraries to show ASCII art representations of your images.",
@@ -20,7 +27,7 @@
   {
     "title": "Department Symposium Webpage",
     "description": "This project features a visually appealing and user-friendly website designed for a departmental symposium.",
-    "tags": ["HTML", "CSS", "JavaScript"],
+    "tags": ["ReactJS"],
     "link": "https://github.com/sree-vignesh/symposium-website"
   },
   {
