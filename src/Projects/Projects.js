@@ -9,8 +9,9 @@ function Projects() {
   useEffect(() => {
     // fetch("/data/projectData.json")
     fetch(
-      // "https://raw.githubusercontent.com/sree-vignesh/data-for-portfolio/refs/heads/main/projects/projectData.json"
-      "https://cdn.jsdelivr.net/gh/sree-vignesh/data-for-portfolio@main/projects/projectData.json"
+      "https://raw.githubusercontent.com/sree-vignesh/data-for-portfolio/refs/heads/main/projects/projectData.json",
+      { cache: "no-store" }
+      // "https://cdn.jsdelivr.net/gh/sree-vignesh/data-for-portfolio@main/projects/projectData.json"
     )
       .then((res) => res.json())
       .then((data) => setProjects(data))
