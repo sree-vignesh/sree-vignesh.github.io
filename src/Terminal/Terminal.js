@@ -16,7 +16,8 @@ const Terminal = () => {
   // ----------------------------------------------------------------------
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/sree-vignesh/data-for-portfolio/refs/heads/main/terminal/terminalData.json"
+      // "https://raw.githubusercontent.com/sree-vignesh/data-for-portfolio/refs/heads/main/terminal/terminalData.json"
+      "https://cdn.jsdelivr.net/gh/sree-vignesh/data-for-portfolio@main/terminal/terminalData.json"
     )
       .then((res) => res.json())
       .then((data) => {
