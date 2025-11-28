@@ -9,8 +9,8 @@ import {
   projects,
   help as commandHelp,
   email,
-} from "./terminalData";
-
+  // } from "./terminalData";
+} from "https://cdn.jsdelivr.net/gh/sree-vignesh/data-for-portfolio@main/terminal/terminalData.js";
 const Terminal = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([]);

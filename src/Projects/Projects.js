@@ -7,7 +7,10 @@ function Projects() {
   const cardsRef = useRef(null); // used only to ensure effect reruns after projects load
 
   useEffect(() => {
-    fetch("/data/projectData.json")
+    // fetch("/data/projectData.json")
+    fetch(
+      "https://raw.githubusercontent.com/sree-vignesh/data-for-portfolio/refs/heads/main/projects/projectData.json"
+    )
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch(() => setProjects([]));
