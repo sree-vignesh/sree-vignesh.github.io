@@ -1,129 +1,128 @@
 import React, { useState, useEffect, useRef } from "react";
-// import Rough from "roughjs/bundler"; // Import Rough.js
-// import { RoughCanvas } from "roughjs/bin/canvas";
-import "./Terminal.css"; // Ensure you have appropriate styles
-import {
-  whois,
-  about,
-  social,
-  projects,
-  help as commandHelp,
-  email,
-  // } from "./terminalData";
-} from "https://cdn.jsdelivr.net/gh/sree-vignesh/data-for-portfolio@main/terminal/terminalData.js";
+import "./Terminal.css";
+
 const Terminal = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([]);
   const [commands, setCommands] = useState([]);
   const [commandIndex, setCommandIndex] = useState(-1);
+
+  const [terminalData, setTerminalData] = useState(null);
+
   const textareaRef = useRef(null);
 
-  const password = "your_password"; // Define your password
-  const [isPasswordMode, setIsPasswordMode] = useState(false);
-  const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
-  const roughCanvasRef = useRef(null); // Reference for Rough.js canvas
-
-  const welcomeMessage = [
-    "Welcome to the terminal!<br/> Type 'help' for a list of commands.<br/>",
-    "List of commands: help, about, projects, email, clear, history",
-  ];
-  // Example theme state
-  const [theme, setTheme] = useState("light");
+  // ----------------------------------------------------------------------
+  // LOAD terminalData.json
+  // ----------------------------------------------------------------------
   useEffect(() => {
-    // Print whois information on load
-    loopLines(whois, 160);
-    // loopLines(welcomeMessage, 80);
-  }, []); // Empty dependency array to run on mount
+    fetch(
+      "https://raw.githubusercontent.com/sree-vignesh/data-for-portfolio/refs/heads/main/terminal/terminalData.json"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Loaded terminal data:", data);
+        setTerminalData(data);
+        loopLines(data.whois, 120);
+      })
+      .catch((err) => console.error("Terminal JSON load error:", err));
+  }, []);
+
+  // ----------------------------------------------------------------------
+  // UTILITY FUNCTIONS
+  // ----------------------------------------------------------------------
   const loopLines = (lines, time) => {
-    lines.forEach((line, index) => {
-      setTimeout(() => addLine(line), index * time);
+    lines.forEach((line, i) => {
+      setTimeout(() => addLine(line), i * time);
     });
   };
 
   const addLine = (text) => {
-    setOutput((prevOutput) => [...prevOutput, text]);
+    setOutput((prev) => [...prev, text]);
     window.scrollTo(0, document.body.scrollHeight);
   };
 
+  // ----------------------------------------------------------------------
+  // KEY HANDLER
+  // ----------------------------------------------------------------------
   const handleKeyUp = (e) => {
-    if (isPasswordMode) {
-      if (e.key === "Enter") {
-        if (input === password) {
-          setIsPasswordCorrect(true);
-          addLine("Password accepted.");
-          setInput("");
-          setIsPasswordMode(false);
-        } else {
-          addLine("Wrong password");
-          setInput("");
-        }
+    if (!terminalData) return;
+
+    if (e.key === "Enter") {
+      const command = input.trim().toLowerCase();
+
+      if (command) {
+        setCommands((prev) => [...prev, command]);
+        addLine(`<span class="command">&gt; ${command}</span>`);
+        processCommand(command);
       }
-    } else {
-      if (e.key === "Enter") {
-        const command = input.trim().toLowerCase();
-        if (command) {
-          setCommands((prev) => [...prev, command]);
-          setCommandIndex(-1);
-          addLine(`<span class="command">> ${command}</span>`);
-          processCommand(command);
-        }
-        setInput("");
-      } else if (e.key === "ArrowUp") {
-        if (commandIndex > 0) {
-          setCommandIndex((prev) => prev - 1);
-          setInput(commands[commandIndex - 1]);
-        }
-      } else if (e.key === "ArrowDown") {
-        if (commandIndex < commands.length - 1) {
-          setCommandIndex((prev) => prev + 1);
-          setInput(commands[commandIndex + 1] || "");
-        }
+
+      setInput("");
+      setCommandIndex(-1);
+    }
+
+    if (e.key === "ArrowUp") {
+      if (commandIndex > 0) {
+        setCommandIndex((prev) => prev - 1);
+        setInput(commands[commandIndex - 1]);
+      }
+    }
+
+    if (e.key === "ArrowDown") {
+      if (commandIndex < commands.length - 1) {
+        setCommandIndex((prev) => prev + 1);
+        setInput(commands[commandIndex + 1] || "");
       }
     }
   };
 
+  // ----------------------------------------------------------------------
+  // COMMAND HANDLER
+  // ----------------------------------------------------------------------
   const processCommand = (cmd) => {
     switch (cmd) {
       case "help":
-        loopLines(commandHelp, 80);
+        loopLines(terminalData.help, 80);
         break;
-      case "hi":
-        loopLines(welcomeMessage, 80);
-        break;
+
       case "about":
-        loopLines(whois, 80);
+        loopLines(terminalData.whois, 80);
         break;
+
       case "social":
-        loopLines(social, 80);
+        loopLines(terminalData.social, 80);
         break;
-      case "secret":
-        setIsPasswordMode(true);
-        break;
+
       case "projects":
-        loopLines(projects, 80);
+        loopLines(terminalData.projects, 80);
         break;
+
       case "email":
         addLine(
-          'Opening mailto:<a href="mailto:reach.sreevignesh@gmail.com">reach.sreevignesh@gmail.com</a>...'
+          `Opening mailto: <a href="${terminalData.email}" target="_blank">${terminalData.email}</a>`
         );
         break;
+
       case "clear":
-        setOutput([]); // Clear the terminal output
+        setOutput([]);
         break;
+
       case "history":
         loopLines(
-          commands.map((cmd) => `<span class="command">> ${cmd}</span>`),
+          commands.map((c) => `> ${c}`),
           80
         );
         break;
+
       default:
-        addLine("Command not found. Type 'help' for a list of commands.");
-        break;
+        addLine("Unknown command. Type 'help'");
     }
   };
 
+  // ----------------------------------------------------------------------
+  // UI
+  // ----------------------------------------------------------------------
   return (
-    <section className={`Terminal ${theme} d-flex flex-column`}>
+    <section className="Terminal  d-flex flex-column">
       <div className="app-bar">
         <div className="app-bar-button minimize"></div>
         <div className="app-bar-button maximize"></div>
@@ -132,22 +131,19 @@ const Terminal = () => {
       <div className="terminal terminal-border">
         <div className="terminal-output">
           {output.map((line, index) => (
-            <p
-              key={index}
-              className="terminal-line"
-              dangerouslySetInnerHTML={{ __html: line }}
-            />
+            <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
           ))}
         </div>
+
         <div className="terminal-input">
           <span>&gt;</span>
           <input
-            color="white"
             type="text"
             ref={textareaRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyUp={handleKeyUp}
+            disabled={!terminalData}
           />
         </div>
       </div>
