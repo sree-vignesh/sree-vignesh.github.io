@@ -9,7 +9,7 @@
   overflow-y: auto; /* Scroll if content exceeds height */
   /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  /* Shadow effect */
   min-width: 70%;
-  min-height: 60%;
+  min-height: 60vh;
   max-height: 90vh;
   max-width: 90vw;
   /* border-style:; */
