@@ -1,0 +1,168 @@
+/* ----------------------------------
+   Section
+---------------------------------- */
+.Projects {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10vh;
+}
+
+/* ----------------------------------
+   Heading
+---------------------------------- */
+.section-heading {
+  color: #ff8a2b;
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: "Nova Mono";
+  margin-bottom: 55px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 25px rgba(255, 138, 43, 0.45);
+  text-decoration: underline;
+  /* max-width: 50vw; */
+}
+
+/* ----------------------------------
+   Grid
+---------------------------------- */
+.projects-grid {
+  width: 100%;
+  max-width: 1350px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 10px;
+}
+
+/* ----------------------------------
+   Compact Glass Card
+---------------------------------- */
+.glass-card {
+  padding: 18px !important;
+  border-radius: 18px;
+  background: rgba(7, 6, 6, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: 0.35s ease;
+  cursor: pointer;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effects */
+.glass-card:hover {
+  border: 1px solid rgba(255, 187, 0, 0.45);
+  backdrop-filter: blur(40px);
+}
+
+/* ----------------------------------
+   Top Row (Issuer + Date)
+---------------------------------- */
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  opacity: 0.85;
+  margin-bottom: 5px;
+}
+
+.issuer-label {
+  font-weight: 700;
+  color: #ff8a2b;
+}
+
+.date-label {
+  opacity: 0.8;
+  font-style: italic;
+  color: #61dafb;
+}
+
+/* ----------------------------------
+   Text
+---------------------------------- */
+.project-title {
+  color: #ff8a2b;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.project-desc {
+  color: #61dafb;
+  font-size: 1rem;
+  line-height: 1.45;
+  opacity: 0.92;
+  margin-bottom: 10px;
+}
+
+/* ----------------------------------
+   Footer
+---------------------------------- */
+.card-footer {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ----------------------------------
+   View Button
+---------------------------------- */
+.button-view-project {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #b85c11;
+  color: #030302;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+  text-align: center;
+}
+
+.button-view-project:hover {
+  background: #ff8a2b;
+}
+
+/* ----------------------------------
+   Spotlight Effect
+---------------------------------- */
+.glass-card {
+  --spot-x: 50%;
+  --spot-y: 50%;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    /* rgba(43, 195, 255, 0.062) 0%,
+    rgba(0, 238, 255, 0.062) 25%, */
+      transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.25s linear;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-card > * {
+  position: relative;
+  z-index: 2;
+}

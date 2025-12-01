@@ -9,6 +9,7 @@ import Contact from "./Contact/Contact";
 import BackgroundGradient from "./BackgroundGradient/BackgroundGradient";
 // import { Navbar, Nav } from "react-bootstrap";
 import NavigationBar from "./Navbar/Navbar";
+import Certificates from "./Certificates/Certificates";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="certificates">
+          <Certificates />
         </section>
         <section id="contact">
           <Contact />
